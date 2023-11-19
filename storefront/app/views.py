@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def say_sth(request):
-    return render(request, "first.html") #HttpResponse("hi")
+    return render(request, "index.html") #HttpResponse("hi")

@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pl"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,8 +8,8 @@
     <meta name="keywords" content="What People Say">
     <meta name="description" content="">
     <title>Główna</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Główna.css" media="screen">
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'Główna.css' %}" media="screen">
     <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.6, nicepage.com">
@@ -109,7 +112,7 @@
             </div><!--/product_item-->
             <!--product_item--><div class="u-container-style u-products-item u-repeater-item u-white u-repeater-item-3">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><!--product_image-->
-                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-3" src="images/pobrane.jpeg" data-image-width="294" data-image-height="171"><!--/product_image-->
+                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-3" src="{% static 'images/pobrane.jpeg' %}" data-image-width="294" data-image-height="171"><!--/product_image-->
                 <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-5">Pies Kropek</h2>
                 <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6">Pies kropek&nbsp; - operacja żołądka</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-product-control u-radius u-btn-5 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Wpłać<!--/product_button_content--></a><!--/product_button--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Licytuj"}--><!--/options_json-->
