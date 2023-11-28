@@ -90,49 +90,41 @@
           <div class="u-repeater u-repeater-1">
             <!--product_item--><div class="u-container-style u-products-item u-repeater-item u-white u-repeater-item-1">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--product_image-->
-                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-1"
-                     src="{% static 'images/pobrane.jpeg' %}" data-image-width="294" data-image-height="171"><!--/product_image-->
-                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-1"> {{ all.0.type }} {{ all.0.name }} </h2>
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-2">{{ all.0.name }} - {{ all.0.description }}</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
+                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-1" src="{% static 'images/1620728230.jpg' %}" data-image-width="1920" data-image-height="1280"><!--/product_image-->
+                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-1"> {{all.0.type}} {{ all.0.name }} </h2>
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-2"> {{all.0.type}} {{ all.0.name }} - {{ all.0.description }} </p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-product-control u-radius u-btn-1 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Wpłać<!--/product_button_content--></a><!--/product_button--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Licytuj"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-palette-2-base u-product-control u-radius u-btn-2 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
                 <!--progress_bar-->
-                <progress class="progress-align-center" value= {{ all.0.donations_amount }} max= {{ all.0.donation_target }} ></progress>
+                <progress class="progress-align-center" value= {{all.0.donations_amount}}  max= {{all.0.donation_target}} ></progress>
                 <!--/progress_bar-->
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-4"> Suma:  {{ all.0.donations_amount }}/{{ all.0.donation_target }}  </p>
-
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6"> Zebrano: {{all.0.donations_amount}} Cel: {{all.0.donation_target}} </p>
               </div>
             </div><!--/product_item-->
             <!--product_item--><div class="u-container-style u-products-item u-repeater-item u-white u-repeater-item-2">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><!--product_image-->
                 <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-2" src="{% static 'images/cute-baby-animal-pictures-zzdaek1h4l810z9w.jpg' %}" data-image-width="1600" data-image-height="1000"><!--/product_image-->
-                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-3"> {{ all.1.type }} {{ all.1.name }} </h2>
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-4"> {{ all.1.name }} - {{ all.1.description }}  </p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
-
-                <a id="updateFieldBtn" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-product-control u-radius u-btn-3 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Wpłać<!--/product_button_content--></a><!--/product_button--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Licytuj"}--><!--/options_json-->
-
-
-
+                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-3"> {{all.1.type}} {{ all.1.name }} </h2>
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-4"> {{all.1.type}} {{ all.1.name }} - {{ all.1.description }} </p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
+                <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-product-control u-radius u-btn-3 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Wpłać<!--/product_button_content--></a><!--/product_button--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Licytuj"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-palette-2-base u-product-control u-radius u-btn-4 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
                 <!--progress_bar-->
-                <progress id="progTiger" class="progress-align-center" value= {{ all.1.donations_amount }} max= {{ all.1.donation_target }} ></progress>
+                <progress class="progress-align-center" value= {{all.1.donations_amount}}  max= {{all.1.donation_target}} ></progress>
                 <!--/progress_bar-->
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-4"> Suma:  {{ all.1.donations_amount }}/{{ all.1.donation_target }}  </p>
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6"> Zebrano: {{all.1.donations_amount}} Cel: {{all.1.donation_target}} </p>
               </div>
             </div><!--/product_item-->
             <!--product_item--><div class="u-container-style u-products-item u-repeater-item u-white u-repeater-item-3">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><!--product_image-->
-                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-3"
-                     src="{% static 'images/1620728230.jpg' %}" data-image-width="1920" data-image-height="1280"><!--/product_image-->
-                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-5"> {{ all.2.type }} {{ all.2.name }} </h2>
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6"> {{ all.2.name }} - {{ all.2.description }} </p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
+                <img alt="" class="custom-expanded u-image u-image-contain u-image-round u-product-control u-radius u-image-3" src="{% static 'images/pobrane.jpeg' %}" data-image-width="294" data-image-height="171"><!--/product_image-->
+                <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-5"> {{all.2.type}} {{ all.2.name }} </h2>
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6"> {{all.2.type}} {{ all.2.name }} - {{ all.2.description }} </p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Wpłać"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-product-control u-radius u-btn-5 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Wpłać<!--/product_button_content--></a><!--/product_button--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Licytuj"}--><!--/options_json-->
                 <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-palette-2-base u-product-control u-radius u-btn-6 u-dialog-link u-payment-button" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
                 <!--progress_bar-->
-                <progress class="progress-align-center" value= {{ all.2.donations_amount }} max= {{ all.2.donation_target }} ></progress>
+                <progress class="progress-align-center" value= {{all.2.donations_amount}}  max= {{all.2.donation_target}} ></progress>
                 <!--/progress_bar-->
-                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-4"> Suma:  {{ all.2.donations_amount }}/{{ all.2.donation_target }}  </p>
-
+                <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-6"> Zebrano: {{all.2.donations_amount}} Cel: {{all.2.donation_target}} </p>
               </div>
             </div><!--/product_item-->
 
