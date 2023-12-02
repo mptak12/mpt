@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class User(models.Model):
     name = models.CharField(max_length=50)
@@ -19,6 +20,15 @@ class Animal(models.Model):
     total_donations = models.IntegerField(default=0)
     donations_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
     donation_target = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
+    due_date = models.DateField(blank=True, null=True)
+
+    def set_default_due_date(self):
+        if not self.due_date:
+            self.due_date = timezone.now() + timezone.timedelta(days=60)
+
+    def save(self, *args, **kwargs):
+        self.set_default_due_date()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.type} {self.name}"
