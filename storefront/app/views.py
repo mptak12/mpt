@@ -22,6 +22,6 @@ def bump(request, pk):
 
 
 def dotation_page(request):
-    return render(request, "dotations.html")
+    return render(request, "donations.html")
 
 

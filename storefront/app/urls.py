@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.main_page, name="main"),
-    path('dotate/', views.dotation_page, name='dotations'),
+    path('donate/', views.dotation_page, name='donations'),
     path('bump/<int:pk>', views.bump, name="bump"),
 ]
