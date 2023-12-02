@@ -21,7 +21,7 @@ def bump(request, pk):
     return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
 
 
-def second_page(request):
-    return HttpResponse("This is test page content")
+def dotation_page(request):
+    return render(request, "dotations.html")
 
 

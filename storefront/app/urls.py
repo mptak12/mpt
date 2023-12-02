@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.main_page, name="main"),
-    path('test_page/', views.second_page, name='test_page'),
+    path('dotate/', views.dotation_page, name='dotations'),
     path('bump/<int:pk>', views.bump, name="bump"),
 ]

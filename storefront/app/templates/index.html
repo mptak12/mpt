@@ -32,25 +32,25 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="/">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="https://website6051647.nicepage.io/Główna.html?version=1cc3181b-0565-135c-1f9e-ff358a99dee6" data-home-page-title="Główna" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-5eec" data-href="https://nicepage.com"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="Główna.html" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
+  <body data-home-page="https://website6051647.nicepage.io/Główna.html?version=1cc3181b-0565-135c-1f9e-ff358a99dee6" data-home-page-title="Główna" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-5eec" ><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
           <img src="{% static 'images/9035065_paw_icon.png' %}" class="u-logo-image u-logo-image-1">
         </a>
-        <a class="u-custom-font u-font-roboto-slab u-hover-feature u-hover-palette-2-base u-login u-text-hover-white u-login-1" data-animation-name="rubberBand" data-animation-duration="1000" data-animation-direction="" href="Login-Template-2.html" title="Login">Login</a>
+        <a class="u-custom-font u-font-roboto-slab u-hover-feature u-hover-palette-2-base u-login u-text-hover-white u-login-1" data-animation-name="rubberBand" data-animation-duration="1000" data-animation-direction="" title="Login">Login</a>
         <h1 class="u-align-center u-custom-font u-font-roboto-slab u-hover-feature u-text u-title u-text-1">WOLNOŚĆ&nbsp; DLA&nbsp; ŁAPKEK</h1>
         <div class="u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-2">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Główna.html">Strona Główna</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="{% url 'main' %}">Strona Główna</a>
                 </p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-3">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="O-nas.html">O Nas</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" >O Nas</a>
                 </p>
               </div>
             </div>
@@ -61,14 +61,14 @@
             </div>
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
-                <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-5">Dotacje</p>
+                <a href="{% url 'dotations' %}">
+                  <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-5">Dotacje</p>
+                </a>
               </div>
             </div>
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5">
-                <a href="{% url 'test_page' %}">
-                  <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-6">Kontakt</p>
-                </a>
+                <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-6">Kontakt</p>
               </div>
             </div>
           </div>
