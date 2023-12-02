@@ -10,13 +10,17 @@
 from storefront.wsgi import * # To set env variables, not needed in project
 from app.models import User, Animal, TransferType, Donation
 from decimal import Decimal
-
+import datetime
 
 # Add one record to tables
 user = User.objects.create(name='John', surname='Kowalsky', email='jk@pdf.com', password='kolysanka', birth_date='2000-01-01') # Default date format: YYYY-MM-DD)
 
 animal1 = Animal.objects.create(name='Kit', type='Cat')
 animal2 = Animal.objects.create(name='Leszek', type='Dog')
+
+# datetime.date
+d = datetime.date(2024, 6, 27)
+animal2.due_date = d
 
 transferTypes = ['barter','blik','przelew tradycyjny','paysafecard']
 for type in transferTypes:
@@ -58,7 +62,7 @@ for user in users:
 
 print("\nAnimal:")
 for animal in animals:
-    print(f"ID: {animal.id}: {animal}, Funds collected: {animal.donations_amount}/{animal.donation_target}, Total donations: {animal.total_donations}")
+    print(f"ID: {animal.id}: {animal}, Funds collected: {animal.donations_amount}/{animal.donation_target}, Total donations: {animal.total_donations}, Due date: {animal.due_date}")
 
 print("\nDonation:")
 for donation in donations:
