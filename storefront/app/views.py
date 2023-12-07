@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Animal
 
@@ -22,6 +22,12 @@ def bump(request, pk):
 
 
 def dotation_page(request):
-    return render(request, "Wpłać.html")
+    return render(request, "Wplac.html")
 
 
+def about_us(request):
+    return render(request, "O-nas.html")
+
+
+def auctions(request):
+    return render(request, "Licytacje.html")
