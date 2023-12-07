@@ -1,14 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pl"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="WOLNOŚĆ&nbsp; DLA&nbsp; ŁAPKEK, Sample Product, Sample Product, Sample Product, Sample Product">
+    <meta name="keywords" content="WOLNOŚĆ&nbsp; DLA&nbsp; ŁAPEK">
     <meta name="description" content="">
     <title>Licytacje</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Licytacje.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'Licytacje.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.13, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -27,11 +29,11 @@
     <meta property="og:title" content="Licytacje">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" id="sec-5eec" data-href="Login-Template-2.html"><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" id="sec-5eec" data-href="{% url 'userLogin' %}"><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
 borders: top right bottom left !important
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="Główna.html" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
-          <img src="images/9035065_paw_icon.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'images/9035065_paw_icon.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <a class="u-custom-font u-font-roboto-slab u-hover-feature u-hover-palette-2-base u-login u-text-black u-text-hover-palette-1-base u-login-1" data-animation-name="rubberBand" data-animation-duration="1000" data-animation-direction="" href="#" title="Login">Login</a>
         <h1 class="u-align-center u-custom-font u-font-roboto-slab u-hover-feature u-text u-title u-text-1">WOLNOŚĆ&nbsp; DLA&nbsp; ŁAPKEK</h1>
@@ -40,28 +42,28 @@ borders: top right bottom left !important
             <div class="u-container-style u-list-item u-repeater-item u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-2">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Główna.html">Strona Główna</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="/">Strona Główna</a>
                 </p>
               </div>
             </div>
             <div class="u-align-center u-container-style u-list-item u-repeater-item u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-3">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="O-nas.html">O Nas</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="/aboutUs">O Nas</a>
                 </p>
               </div>
             </div>
             <div class="u-container-style u-list-item u-repeater-item u-list-item-3">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-4">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="Licytacje.html">Licytacje</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="/auctions">Licytacje</a>
                 </p>
               </div>
             </div>
             <div class="u-container-style u-list-item u-repeater-item u-list-item-4">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-5">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4" href="Wpłać.html">Dotacje</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4" href="/donate">Dotacje</a>
                 </p>
               </div>
             </div>
@@ -71,7 +73,7 @@ borders: top right bottom left !important
     <section class="u-clearfix u-grey-80 u-section-1" id="sec-fe7f"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-product u-product-1">
         <div class="u-container-layout u-valign-bottom u-container-layout-1"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="images/49e35fb156682e0fe069908b8ee3032ee967d46ec37ac81c3ddfeb3f9503154f283e7a71f3ea9c093b19863952c91bd453197463d2052fc2e9ee6e_1280.jpg"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="{% static 'images/49e35fb156682e0fe069908b8ee3032ee967d46ec37ac81c3ddfeb3f9503154f283e7a71f3ea9c093b19863952c91bd453197463d2052fc2e9ee6e_1280.jpg' %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-1">
             <div class="u-container-layout u-container-layout-2"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
@@ -90,7 +92,7 @@ borders: top right bottom left !important
       </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
         <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="images/1949a5ea0ddbc3494661a77794e49131a64eacd2d115d6adfa5af55fb489286abbc0ec32d0a58621cb4b57e2687bc88a885ddbd924695a2ef3c937_1280.jpg"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static 'images/1949a5ea0ddbc3494661a77794e49131a64eacd2d115d6adfa5af55fb489286abbc0ec32d0a58621cb4b57e2687bc88a885ddbd924695a2ef3c937_1280.jpg' %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
             <div class="u-container-layout u-container-layout-4"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
@@ -109,7 +111,7 @@ borders: top right bottom left !important
       </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-product u-product-3">
         <div class="u-container-layout u-container-layout-5"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-5" data-image-width="1280" data-image-height="853" src="images/72c64e4b2708e96bc79f63cd38c2c96559a1b269a9fa99b386ad5f52d44dd3bb513e22c8a24f255f3612dc25763a33bc464ac720a148c581021e2b_1280.jpg"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-5" data-image-width="1280" data-image-height="853" src="{% static 'images/72c64e4b2708e96bc79f63cd38c2c96559a1b269a9fa99b386ad5f52d44dd3bb513e22c8a24f255f3612dc25763a33bc464ac720a148c581021e2b_1280.jpg' %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-3">
             <div class="u-container-layout u-container-layout-6"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-9">
@@ -128,7 +130,7 @@ borders: top right bottom left !important
       </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-product u-product-4">
         <div class="u-container-layout u-valign-bottom u-container-layout-7"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-7" data-image-width="1280" data-image-height="853" src="images/eb597580d9106cf838c74fb4fd823c7c35e479283ae2756e41c02ee26fa01732e8cd834f9413bbdcbb685cce6b27c4864ab6a5959b44df5c73d761_1280.jpg"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-7" data-image-width="1280" data-image-height="853" src="{% static 'images/eb597580d9106cf838c74fb4fd823c7c35e479283ae2756e41c02ee26fa01732e8cd834f9413bbdcbb685cce6b27c4864ab6a5959b44df5c73d761_1280.jpg' %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-4">
             <div class="u-container-layout u-container-layout-8"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-13">
@@ -150,15 +152,15 @@ borders: top right bottom left !important
     
     
     
-    <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/3940403.png" alt=""></span>
+    <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
         <div class="custom-expanded u-align-center u-layout-grid u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1250">
-              <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2"><img src="images/2913494-ec9093cd.png" alt=""></span>
+              <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2"><img src="{% static 'images/2913494-ec9093cd.png' %}" alt=""></span>
               </div>
             </div>
             <div class="u-align-left u-container-style u-list-item u-repeater-item u-shape-rectangle u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1250">
-              <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-3"><img src="images/2050424-d18f8ede.png" alt=""></span>
+              <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-3"><img src="{% static 'images/2050424-d18f8ede.png' %}" alt=""></span>
               </div>
             </div>
           </div>
@@ -237,7 +239,7 @@ borders: top right bottom left !important
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
           <img class="u-image u-image-circle u-image-contain u-image-3" src="https://pixabay.com/get/gfef8be3f1b49034449a0866d298c10b7c76eac3c55cb941f2038ebe141b5c6cc1886bc1f13691d7014f509167df3a3a8332219eec89136f2f275ec3b970281e9_1280.png" alt="" data-image-width="1280" data-image-height="640">
           <p class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</p>
-          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="images/924961.png" alt=""></span>
+          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
           <p class="u-custom-font u-font-roboto-slab u-text u-text-5">&nbsp; &nbsp; &nbsp;Bank</p>
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-4"></div>
           <div class="custom-expanded u-form u-form-1">
