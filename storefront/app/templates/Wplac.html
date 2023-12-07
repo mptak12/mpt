@@ -28,13 +28,13 @@
     <meta property="og:title" content="Wpłać">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" id="sec-5eec" data-href="Login-Template-2.html"><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" ><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
 borders: top right bottom left !important
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="{% url 'main' %}" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
           <img src="{% static 'images/9035065_paw_icon.png' %}" class="u-logo-image u-logo-image-1">
         </a>
-        <a class="u-custom-font u-font-roboto-slab u-hover-feature u-hover-palette-2-base u-login u-text-black u-text-hover-palette-1-base u-login-1" data-animation-name="rubberBand" data-animation-duration="1000" data-animation-direction="" href="#" title="Login">Login</a>
+        <a class="u-custom-font u-font-roboto-slab u-hover-feature u-hover-palette-2-base u-login u-text-black u-text-hover-palette-1-base u-login-1" data-animation-name="rubberBand" data-animation-duration="1000" data-animation-direction="" id="sec-5eec" data-href="Login-Template-2.html" title="Login" >Login</a>
         <h1 class="u-align-center u-custom-font u-font-roboto-slab u-hover-feature u-text u-title u-text-1">WOLNOŚĆ&nbsp; DLA&nbsp; ŁAPKEK</h1>
         <div class="u-list u-list-1">
           <div class="u-repeater u-repeater-1">
@@ -48,14 +48,14 @@ borders: top right bottom left !important
             <div class="u-align-center u-container-style u-list-item u-repeater-item u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-3">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="O-nas.html">O Nas</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2" href="{% url 'us' %}">O Nas</a>
                 </p>
               </div>
             </div>
             <div class="u-container-style u-list-item u-repeater-item u-list-item-3">
               <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
                 <p class="u-custom-font u-custom-item u-font-merriweather u-hover-feature u-text u-text-4">
-                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="Licytacje.html">Licytacje</a>
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="{% url 'auctions' %}">Licytacje</a>
                 </p>
               </div>
             </div>

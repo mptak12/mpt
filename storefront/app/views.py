@@ -31,3 +31,7 @@ def about_us(request):
 
 def auctions(request):
     return render(request, "Licytacje.html")
+
+
+def login(request):
+    return render(request, "Login.html")
