@@ -30,6 +30,9 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" ><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
 borders: top right bottom left !important
+
+var offerId = 0
+
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="{% url 'main' %}" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
           <img src="{% static 'images/9035065_paw_icon.png' %}" class="u-logo-image u-logo-image-1">
@@ -83,7 +86,7 @@ borders: top right bottom left !important
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
                   <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="{% static '#sec-9a2f' %}" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('1')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -104,7 +107,7 @@ borders: top right bottom left !important
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
                   <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('2')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -125,7 +128,7 @@ borders: top right bottom left !important
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
                   <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('3')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -146,7 +149,7 @@ borders: top right bottom left !important
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
                   <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('4')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -232,7 +235,7 @@ borders: top right bottom left !important
       </a>. 
     </section>
   <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
-      <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
+    <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
           <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
           <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
@@ -253,9 +256,37 @@ borders: top right bottom left !important
                 <textarea placeholder="Podaj kwotę wpłaty" id="email-a0fb" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
               </div>
               <div class="u-align-left u-form-group u-form-submit u-label-none">
-                <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
+                <a href="#" onclick="getValueAndId()" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
+
                 <input type="submit" value="submit" class="u-form-control-hidden">
               </div>
+
+              <script>
+              function getOfferId(ofID) {
+                offerId = ofID
+              }
+
+              function reloadPage() {
+                location.reload();
+              }
+              </script>
+
+              <script>
+                function getValueAndId() {
+                    var textareaValue = document.getElementById('email-a0fb').value;
+
+                    $.ajax({
+                      type: 'POST',
+                      url:'',
+                      data: { 'donation_value': textareaValue, 'offer_pk': offerId },
+                      success: function(){
+                          alert('Donated!!');
+                          reloadPage();
+                      }
+                    })
+                }
+              </script>
+
               <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
               <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
               <input type="hidden" value="" name="recaptchaResponse">

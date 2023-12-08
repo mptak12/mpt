@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Animal
+from django.views.decorators.csrf import csrf_exempt
 
 
 def main_page(request):
@@ -21,7 +22,18 @@ def bump(request, pk):
     return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
 
 
+@csrf_exempt
 def dotation_page(request):
+    if request.method == "POST":
+        print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
+        animal_pk = request.POST.get('offer_pk')
+        animal_val = request.POST.get('donation_value')
+
+        a = Animal.objects.get(pk=animal_pk)
+        a.donations_amount += int(animal_val)
+        a.total_donations += 1
+        a.save()
+        return redirect('donations')
     return render(request, "Wplac.html")
 
 

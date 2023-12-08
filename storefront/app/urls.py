@@ -9,4 +9,5 @@ urlpatterns = [
     path('auctions/', views.auctions, name="auctions"),
     path('login/', views.login, name="userLogin"),
     path('bump/<int:pk>', views.bump, name="bump"),
+
 ]
