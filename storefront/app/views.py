@@ -24,6 +24,8 @@ def bump(request, pk):
 
 @csrf_exempt
 def dotation_page(request):
+    all_animals = Animal.objects.all
+
     if request.method == "POST":
         print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
         animal_pk = request.POST.get('offer_pk')
@@ -33,8 +35,7 @@ def dotation_page(request):
         a.donations_amount += int(animal_val)
         a.total_donations += 1
         a.save()
-        return redirect('donations')
-    return render(request, "Wplac.html")
+    return render(request, "Wplac.html", {"all": all_animals})
 
 
 def about_us(request):

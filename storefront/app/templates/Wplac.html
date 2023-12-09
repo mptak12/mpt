@@ -76,17 +76,18 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="854" src="{% static 'images/717f09a70f13123b7b13518a13ab5d26a21890a0248759ef7957e047da2c8ee825ba9ebdea101708bc0dfffe8a7a33d3a3ca077f3a153ef8f1ed22_1280.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="854" src="{% static all.0.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.0.type}} {{ all.0.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.0.description}} Kwota: {{all.0.donations_amount}} Cel: {{all.0.donation_target}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" onclick="getOfferId('1')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+
+                <a href="#sec-9a2f" onclick="getOfferId({{all.0.pk}})" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
