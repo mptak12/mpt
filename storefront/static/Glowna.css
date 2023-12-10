@@ -602,3 +602,91 @@
   font-weight: 700 !important;
   text-shadow: 2px 0px 8px rgba(128,128,128,1) !important;
 }
+
+/*mine ------------------------------------*/
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; /* Adjust the width based on the progress */
+  background: linear-gradient(to right, #6b2fcc, #8c43e6);
+  border-radius: 10px;
+  transition: width 0.7s; /* Add a transition for a smoother effect */
+}
+
+.progress-bar-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add styles for the value-indicator */
+.value-indicator {
+  z-index: 1; /* Ensure it's above the progress bar */
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.button-container .btn {
+  padding: 8px 25px;
+  background-color: #5507af; /* Button color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.7s;
+}
+
+
+.button-container .btn:hover {
+  background-color: #8b5fbf; /* Button color on hover */
+}
+.image-container img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.button-container .value-indicator {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px;
+  background-color: #329725; /* Background color for the indicator */
+  border-radius: 8px;
+  margin-right: 5px; /* Adjust the spacing between the indicator and buttons a*/
+}
