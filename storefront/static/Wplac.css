@@ -51,7 +51,7 @@
 .u-section-1 .u-text-2 {
   font-weight: 700;
   font-size: 1.125rem;
-  margin: 160px 0 0;
+  margin: 30px 0 0;
 }
 
 .u-section-1 .u-btn-1 {
@@ -208,7 +208,7 @@
 .u-section-2 .u-text-2 {
   font-weight: 700;
   font-size: 1.125rem;
-  margin: 160px 0 0;
+  margin: 30px 0 0;
 }
 
 .u-section-2 .u-btn-1 {
@@ -364,7 +364,7 @@
 .u-section-3 .u-text-2 {
   font-weight: 700;
   font-size: 1.125rem;
-  margin: 160px 0 0;
+  margin: 30px 0 0;
 }
 
 .u-section-3 .u-btn-1 {
@@ -520,7 +520,7 @@
 .u-section-4 .u-text-2 {
   font-weight: 700;
   font-size: 1.125rem;
-  margin: 160px 0 0;
+  margin: 30px 0 0;
 }
 
 .u-section-4 .u-btn-1 {
@@ -633,7 +633,7 @@
   color: #e00505;
 }
 .u-progress-bar {
-  margin-top: 100px;
+  margin-top: 10px;
   width: 100%;
   height: 20px;
   border-radius: 10px;
@@ -650,6 +650,11 @@
   background-color: #4CAF50;
 }
 
-.progress-bar::-moz-progress-bar {
-  background-color: #4CAF50;
+
+.value-indicator {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px;
 }
