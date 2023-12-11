@@ -88,25 +88,25 @@ borders: top right bottom left !important
       <div class="image-grid">
         <!-- Image 1 -->
         <div class="image-container">
-          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">Zaorski</h2>
-          <img src="{%static 'images/6b668d979f0b144e77697b5340435aea80017de34fc93536c5674b573c1db7b2d5233e853459f21331d929e0f79eb19b304c72bb5562dc9f15087c_1280.jpg'%}" alt="Image 1">
+          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.name}}</h2>
+          <img src="{% static all.0.picture %}" alt="Image 1">
           <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 button-container">
             <button class=" u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
-            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">50/100</div>
+            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator"> {{all.0.donations_amount}}/{{all.0.donation_target}} </div>
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
           </div>
           <div class="progress-bar-container">
-            <progress class="progress-bar" value="100" max="100"></progress>
+            <progress class="progress-bar" value="{{all.0.donations_amount}}" max="{{all.0.donation_target}}"></progress>
           </div>
         </div>
   
         <!-- Image 2 -->
         <div class="image-container">
-          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-2">W koszuli od vistual</h2>
-          <img src="{% static 'images/1620728230.jpg'%}" alt="Image 2">
+          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-2">{{all.1.name}}</h2>
+          <img src="{% static all.1.picture %}" alt="Image 2">
           <div class="button-container">
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
-            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">50/100</div>
+            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
           </div>
           <div class="progress-bar-container">
@@ -116,15 +116,15 @@ borders: top right bottom left !important
   
         <!-- Image 3 -->
         <div class="image-container">
-          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-3">Bonzo</h2>
-          <img src="{%static 'images/cute-baby-animal-pictures-zzdaek1h4l810z9w.jpg'%}" alt="Image 3">
+          <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-3">{{all.2.name}}</h2>
+          <img src="{% static all.2.picture %}" alt="Image 3">
           <div class="button-container">
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
-            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">50/100</div>
+            <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
           </div>
           <div class="progress-bar-container">
-            <progress class="progress-bar" value="75" max="100"></progress>
+            <progress class="progress-bar" value="{{all.2.donations_amount}}" max="{{all.2.donation_target}}"></progress>
           </div>
         </div>
       </div>
