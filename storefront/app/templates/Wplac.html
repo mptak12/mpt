@@ -76,7 +76,7 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="854" src="{% static all.0.picture %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1"  src="{% static all.0.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
@@ -88,7 +88,7 @@ var offerId = 0
                   <progress class="u-progress-bar" value="50" max="100"></progress>
                 </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.0.description}} Kwota: {{all.0.donations_amount}} Cel: {{all.0.donation_target}}</p><!--/product_content_content-->
+                  <p>{{all.0.description}} <br> Kwota: {{all.0.donations_amount}} Cel: {{all.0.donation_target}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
 
                 <a href="#sec-9a2f" onclick="getOfferId({{all.0.pk}})" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
@@ -102,19 +102,19 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="857" src= "{% static 'images/6e10784cd6c1fd866182c59ddff98d848772441ef7bff0d0aa6ffc6cb6ab515291c8569baef4f82ab5bdb9036e3e0084d486d9d6273cd59492a5ce_1280.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="857" src= "{% static all.1.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.1.type}} {{ all.1.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
                 <div>
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
                   <progress class="u-progress-bar" value="50" max="100"></progress>
                 </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.1.description}} <br> Kwota: {{all.1.donations_amount}} Cel: {{all.1.donation_target}}</p></p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
                 <a href="#sec-9a2f" onclick="getOfferId('2')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
@@ -127,19 +127,19 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="960" src= "{% static 'images/6b668d979f0b144e77697b5340435aea80017de34fc93536c5674b573c1db7b2d5233e853459f21331d929e0f79eb19b304c72bb5562dc9f15087c_1280.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="960" src= "{% static all.2.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.2.type}} {{ all.2.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
                 <div>
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
                   <progress class="u-progress-bar" value="50" max="100"></progress>
                 </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.2.description}} <br> Kwota: {{all.2.donations_amount}} Cel: {{all.2.donation_target}}</p></p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
                 <a href="#sec-9a2f" onclick="getOfferId('3')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
@@ -152,19 +152,19 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1600" data-image-height="1000" src="{% static 'images/cute-baby-animal-pictures-zzdaek1h4l810z9w.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1600" data-image-height="1000" src="{% static all.3.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.3.type}} {{ all.3.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
                 <div>
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
                   <progress class="u-progress-bar" value="50" max="100"></progress>
                 </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.3.description}} <br> Kwota: {{all.3.donations_amount}} Cel: {{all.3.donation_target}}</p></p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
                 <a href="#sec-9a2f" onclick="getOfferId('4')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
