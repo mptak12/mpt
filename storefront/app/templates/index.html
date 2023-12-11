@@ -91,7 +91,7 @@ borders: top right bottom left !important
           <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.name}}</h2>
           <img src="{% static all.0.picture %}" alt="Image 1">
           <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 button-container">
-            <a href="#sec-9a2f" >
+            <a href="{% url 'donations' %}" >
               <button class=" u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
             </a>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator"> {{all.0.donations_amount}}/{{all.0.donation_target}} </div>
@@ -109,7 +109,9 @@ borders: top right bottom left !important
           <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-2">{{all.1.name}}</h2>
           <img src="{% static all.1.picture %}" alt="Image 2">
           <div class="button-container">
-            <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            <a href="{% url 'donations' %}" >
+              <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            </a>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
             <a href="{% url 'auctions' %}">
               <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
@@ -125,7 +127,9 @@ borders: top right bottom left !important
           <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-3">{{all.2.name}}</h2>
           <img src="{% static all.2.picture %}" alt="Image 3">
           <div class="button-container">
-            <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            <a href="{% url 'donations' %}" >
+              <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            </a>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
             <a href="{% url 'auctions' %}">
               <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
