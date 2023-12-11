@@ -83,14 +83,14 @@ var offerId = 0
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
                   <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.0.type}} {{ all.0.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.0.description}} <br> Kwota: {{all.0.donations_amount}} Cel: {{all.0.donation_target}}</p><!--/product_content_content-->
+                  <p>{{all.0.description}} </p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
 
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.donations_amount}}/{{all.0.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.0.donations_amount}}" max="{{all.0.donation_target}}"></progress>
+                </div>
                 <a href="#sec-9a2f" onclick="getOfferId({{all.0.pk}})" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
@@ -109,13 +109,14 @@ var offerId = 0
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
                   <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.1.type}} {{ all.1.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.1.description}} <br> Kwota: {{all.1.donations_amount}} Cel: {{all.1.donation_target}}</p></p><!--/product_content_content-->
+                  <p>{{all.1.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.1.donations_amount}}" max="{{all.1.donation_target}}"></progress>
+                </div>
                 <a href="#sec-9a2f" onclick="getOfferId('2')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
@@ -134,13 +135,14 @@ var offerId = 0
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
                   <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.2.type}} {{ all.2.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.2.description}} <br> Kwota: {{all.2.donations_amount}} Cel: {{all.2.donation_target}}</p></p><!--/product_content_content-->
+                  <p>{{all.2.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.2.donations_amount}}" max="{{all.2.donation_target}}"></progress>
+                </div>
                 <a href="#sec-9a2f" onclick="getOfferId('3')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
@@ -159,13 +161,14 @@ var offerId = 0
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
                   <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.3.type}} {{ all.3.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.3.description}} <br> Kwota: {{all.3.donations_amount}} Cel: {{all.3.donation_target}}</p></p><!--/product_content_content-->
+                  <p>{{all.3.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.3.donations_amount}}/{{all.3.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.3.donations_amount}}" max="{{all.3.donation_target}}"></progress>
+                </div>
                 <a href="#sec-9a2f" onclick="getOfferId('4')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
