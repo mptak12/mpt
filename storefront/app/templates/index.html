@@ -91,10 +91,12 @@ borders: top right bottom left !important
           <h2 class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.name}}</h2>
           <img src="{% static all.0.picture %}" alt="Image 1">
           <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 button-container">
-            <button class=" u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            <a href="#sec-9a2f" >
+              <button class=" u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
+            </a>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator"> {{all.0.donations_amount}}/{{all.0.donation_target}} </div>
             <a href="{% url 'auctions' %}">
-              <button onclick="{% url 'auctions' %}" class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+              <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
             </a>
           </div>
           <div class="progress-bar-container">
@@ -114,7 +116,7 @@ borders: top right bottom left !important
             </a>
           </div>
           <div class="progress-bar-container">
-            <progress class="progress-bar" value="30" max="100"></progress>
+            <progress class="progress-bar" value="{{all.1.donations_amount}}" max="{{all.1.donation_target}}"></progress>
           </div>
         </div>
   
@@ -211,5 +213,430 @@ borders: top right bottom left !important
         <span>Website Builder Software</span>
       </a>. 
     </section>
+
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
+    <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
+        <div class="u-container-layout u-container-layout-1">
+          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
+          <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
+          <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
+          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+          <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
+          <p class="u-custom-font u-font-roboto-slab u-text u-text-3">Blik</p>
+          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
+          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://pixabay.com/get/gfef8be3f1b49034449a0866d298c10b7c76eac3c55cb941f2038ebe141b5c6cc1886bc1f13691d7014f509167df3a3a8332219eec89136f2f275ec3b970281e9_1280.png" alt="" data-image-width="1280" data-image-height="640">
+          <p class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</p>
+          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
+          <p class="u-custom-font u-font-roboto-slab u-text u-text-5">&nbsp; &nbsp; &nbsp;Bank</p>
+          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-4"></div>
+          <div class="custom-expanded u-form u-form-1">
+            <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 10px;">
+              <div class="u-form-group u-form-message u-label-none">
+                <label for="email-a0fb" class="u-label">[PLN]</label>
+                <textarea placeholder="Podaj kwotę wpłaty" id="email-a0fb" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
+              </div>
+              <div class="u-align-left u-form-group u-form-submit u-label-none">
+                <a href="#" onclick="getValueAndId()" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
+
+                <input type="submit" value="submit" class="u-form-control-hidden">
+              </div>
+
+              <script>
+              function getOfferId(ofID) {
+                offerId = ofID
+              }
+
+              function reloadPage() {
+                location.reload();
+              }
+              </script>
+
+              <script>
+                function getValueAndId() {
+                    var textareaValue = document.getElementById('email-a0fb').value;
+
+                    $.ajax({
+                      type: 'POST',
+                      url:'',
+                      data: { 'donation_value': textareaValue, 'offer_pk': offerId },
+                      success: function(){
+                          alert('Donated!!');
+                          reloadPage();
+                      }
+                    })
+                }
+              </script>
+
+              <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
+              <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
+              <input type="hidden" value="" name="recaptchaResponse">
+              <input type="hidden" name="formServices" value="">
+            </form>
+          </div>
+        </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+      </div>
+    </section>
+  <style>.u-dialog-section-7 .u-dialog-1 {
+  width: 570px;
+  min-height: 941px;
+  height: auto;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+  margin: 10px auto 60px;
+}
+
+.u-dialog-section-7 .u-container-layout-1 {
+  padding: 28px 0 35px;
+}
+
+.u-dialog-section-7 .u-text-1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 6px 55px 0 35px;
+}
+
+.u-dialog-section-7 .u-text-2 {
+  font-size: 2.25rem;
+  font-weight: 400;
+  margin: 8px auto 0;
+}
+
+.u-dialog-section-7 .u-image-1 {
+  width: 160px;
+  height: 160px;
+  margin: 14px 199px 0 auto;
+}
+
+.u-dialog-section-7 .u-line-1 {
+  width: 456px;
+  border-style: solid;
+  margin: 20px auto 0;
+}
+
+.u-dialog-section-7 .u-image-2 {
+  width: 169px;
+  height: 136px;
+  margin: 7px auto 0 58px;
+}
+
+.u-dialog-section-7 .u-text-3 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: -92px 35px 0 264px;
+}
+
+.u-dialog-section-7 .u-line-2 {
+  width: 456px;
+  border-style: solid;
+  margin: 25px auto 0;
+}
+
+.u-dialog-section-7 .u-image-3 {
+  width: 119px;
+  height: 119px;
+  margin: 13px auto 0 75px;
+}
+
+.u-dialog-section-7 .u-text-4 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: -84px 29px 0 270px;
+}
+
+.u-dialog-section-7 .u-line-3 {
+  width: 456px;
+  border-style: solid;
+  margin: 40px auto 0;
+}
+
+.u-dialog-section-7 .u-icon-1 {
+  width: 85px;
+  height: 85px;
+  margin: 25px auto 0 75px;
+  padding: 0;
+}
+
+.u-dialog-section-7 .u-text-5 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: -63px 60px 0 239px;
+}
+
+.u-dialog-section-7 .u-line-4 {
+  width: 456px;
+  border-style: solid;
+  margin: 50px auto 0;
+}
+
+.u-dialog-section-7 .u-form-1 {
+  height: 93px;
+  margin: 19px 29px 0 41px;
+}
+
+.u-dialog-section-7 .u-btn-1 {
+  --radius: 40px;
+  text-transform: uppercase;
+  background-image: none;
+  font-weight: 700;
+  padding: 14px 30px;
+}
+
+.u-dialog-section-7 .u-icon-2 {
+  width: 20px;
+  height: 20px;
+  left: auto;
+  top: 36px;
+  position: absolute;
+  right: 35px;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-dialog-section-7 .u-text-1 {
+    margin-right: 55px;
+    margin-left: 35px;
+  }
+
+  .u-dialog-section-7 .u-text-2 {
+    margin-top: 42px;
+  }
+
+  .u-dialog-section-7 .u-image-1 {
+    width: 160px;
+    height: 160px;
+    margin-top: -59px;
+    margin-right: 199px;
+  }
+
+  .u-dialog-section-7 .u-line-1 {
+    width: 456px;
+    margin-top: 51px;
+  }
+
+  .u-dialog-section-7 .u-image-2 {
+    width: 169px;
+    height: 137px;
+    margin-top: 80px;
+  }
+
+  .u-dialog-section-7 .u-text-3 {
+    margin-top: -92px;
+    margin-right: 35px;
+    margin-left: 264px;
+  }
+
+  .u-dialog-section-7 .u-line-2 {
+    width: 456px;
+    margin-top: 3px;
+  }
+
+  .u-dialog-section-7 .u-image-3 {
+    width: 119px;
+    height: 119px;
+    margin-top: 65px;
+    margin-left: 75px;
+  }
+
+  .u-dialog-section-7 .u-text-4 {
+    margin-top: -95px;
+    margin-right: 29px;
+    margin-left: 270px;
+  }
+
+  .u-dialog-section-7 .u-line-3 {
+    width: 456px;
+    margin-top: 46px;
+  }
+
+  .u-dialog-section-7 .u-icon-1 {
+    width: 85px;
+    height: 85px;
+    margin-top: 41px;
+    margin-left: 75px;
+  }
+
+  .u-dialog-section-7 .u-text-5 {
+    margin-top: -63px;
+    margin-right: 60px;
+    margin-left: 239px;
+  }
+
+  .u-dialog-section-7 .u-line-4 {
+    width: 456px;
+    margin-top: 75px;
+  }
+
+  .u-dialog-section-7 .u-form-1 {
+    margin-top: 10px;
+    margin-right: 29px;
+    margin-left: 41px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-dialog-section-7 .u-container-layout-1 {
+    padding-bottom: 30px;
+  }
+
+  .u-dialog-section-7 .u-text-3 {
+    margin-top: -92px;
+  }
+
+  .u-dialog-section-7 .u-icon-2 {
+    top: 32px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-dialog-section-7 .u-dialog-1 {
+    width: 540px;
+  }
+
+  .u-dialog-section-7 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-dialog-section-7 .u-text-1 {
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+
+  .u-dialog-section-7 .u-text-2 {
+    margin-top: 154px;
+  }
+
+  .u-dialog-section-7 .u-image-1 {
+    margin-top: -59px;
+  }
+
+  .u-dialog-section-7 .u-image-2 {
+    margin-top: -32px;
+  }
+
+  .u-dialog-section-7 .u-text-3 {
+    margin-top: 36px;
+    margin-right: 20px;
+    margin-left: 249px;
+  }
+
+  .u-dialog-section-7 .u-line-2 {
+    margin-top: -13px;
+  }
+
+  .u-dialog-section-7 .u-image-3 {
+    margin-top: -47px;
+  }
+
+  .u-dialog-section-7 .u-text-4 {
+    margin-right: 14px;
+    margin-left: 255px;
+  }
+
+  .u-dialog-section-7 .u-line-3 {
+    margin-top: 166px;
+  }
+
+  .u-dialog-section-7 .u-icon-1 {
+    margin-top: -79px;
+  }
+
+  .u-dialog-section-7 .u-text-5 {
+    margin-right: 45px;
+    margin-left: 224px;
+  }
+
+  .u-dialog-section-7 .u-line-4 {
+    margin-top: 139px;
+  }
+
+  .u-dialog-section-7 .u-form-1 {
+    margin-top: -78px;
+    margin-right: 14px;
+    margin-left: 26px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-dialog-section-7 .u-dialog-1 {
+    width: 340px;
+  }
+
+  .u-dialog-section-7 .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-dialog-section-7 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-dialog-section-7 .u-text-2 {
+    margin-top: 106px;
+  }
+
+  .u-dialog-section-7 .u-image-1 {
+    margin-top: -59px;
+    margin-right: 180px;
+  }
+
+  .u-dialog-section-7 .u-line-1 {
+    width: 340px;
+  }
+
+  .u-dialog-section-7 .u-image-2 {
+    margin-top: 16px;
+  }
+
+  .u-dialog-section-7 .u-text-3 {
+    margin-top: -12px;
+    margin-right: 0;
+    margin-left: 69px;
+  }
+
+  .u-dialog-section-7 .u-line-2 {
+    width: 340px;
+    margin-top: -13px;
+  }
+
+  .u-dialog-section-7 .u-image-3 {
+    margin-top: 1px;
+  }
+
+  .u-dialog-section-7 .u-text-4 {
+    margin-right: 0;
+    margin-left: 69px;
+  }
+
+  .u-dialog-section-7 .u-line-3 {
+    width: 340px;
+    margin-top: 118px;
+  }
+
+  .u-dialog-section-7 .u-icon-1 {
+    margin-top: -31px;
+  }
+
+  .u-dialog-section-7 .u-text-5 {
+    margin-right: 0;
+    margin-left: 69px;
+  }
+
+  .u-dialog-section-7 .u-line-4 {
+    width: 340px;
+  }
+
+  .u-dialog-section-7 .u-form-1 {
+    margin-top: -78px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-dialog-section-7 .u-icon-2 {
+    right: 20px;
+  }
+}</style>
+
   
 </body></html>

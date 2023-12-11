@@ -32,6 +32,7 @@
 borders: top right bottom left !important
 
 var offerId = 0
+var offerName = ""
 
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="{% url 'main' %}" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
@@ -91,7 +92,7 @@ var offerId = 0
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.donations_amount}}/{{all.0.donation_target}}</div>
                   <progress class="u-progress-bar" value="{{all.0.donations_amount}}" max="{{all.0.donation_target}}"></progress>
                 </div>
-                <a href="#sec-9a2f" onclick="getOfferId({{all.0.pk}})" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.0.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -117,7 +118,7 @@ var offerId = 0
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
                   <progress class="u-progress-bar" value="{{all.1.donations_amount}}" max="{{all.1.donation_target}}"></progress>
                 </div>
-                <a href="#sec-9a2f" onclick="getOfferId('2')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.1.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -143,7 +144,7 @@ var offerId = 0
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
                   <progress class="u-progress-bar" value="{{all.2.donations_amount}}" max="{{all.2.donation_target}}"></progress>
                 </div>
-                <a href="#sec-9a2f" onclick="getOfferId('3')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.2.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -169,7 +170,7 @@ var offerId = 0
                   <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.3.donations_amount}}/{{all.3.donation_target}}</div>
                   <progress class="u-progress-bar" value="{{all.3.donations_amount}}" max="{{all.3.donation_target}}"></progress>
                 </div>
-                <a href="#sec-9a2f" onclick="getOfferId('4')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.3.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -257,14 +258,14 @@ var offerId = 0
   <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
     <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
-          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
-          <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
-          <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
+          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłata</h5>
+          <!--<h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2" id="nameDisplay"> NAPIS </h6>-->
+          <img class="u-image u-image-circle u-image-1" src= "{% static 'images/sausage.jpg' %}" alt="" data-image-width="1600" data-image-height="900">
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
           <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
           <p class="u-custom-font u-font-roboto-slab u-text u-text-3">Blik</p>
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
-          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://pixabay.com/get/gfef8be3f1b49034449a0866d298c10b7c76eac3c55cb941f2038ebe141b5c6cc1886bc1f13691d7014f509167df3a3a8332219eec89136f2f275ec3b970281e9_1280.png" alt="" data-image-width="1280" data-image-height="640">
+          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://www.paypalobjects.com/marketing/web/US/en/rebrand/Mobile-apps/mobile-apps--card-content--pp-business--for=all.jpg" alt="" data-image-width="1280" data-image-height="640">
           <p class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</p>
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
           <p class="u-custom-font u-font-roboto-slab u-text u-text-5">&nbsp; &nbsp; &nbsp;Bank</p>
@@ -282,8 +283,17 @@ var offerId = 0
               </div>
 
               <script>
+              function changeName() {
+                var nameDisplay = document.getElementById("nameDisplay");
+                nameDisplay.value = "Oferta: " + offerName;
+                alert("Ale zmiana wow")
+              }
+              </script>
+
+              <script>
               function getOfferId(ofID) {
                 offerId = ofID
+                changeName()
               }
 
               function reloadPage() {
@@ -315,7 +325,8 @@ var offerId = 0
           </div>
         </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
       </div>
-    </section><style>.u-dialog-section-7 .u-dialog-1 {
+    </section>
+  <style>.u-dialog-section-7 .u-dialog-1 {
   width: 570px;
   min-height: 941px;
   height: auto;
