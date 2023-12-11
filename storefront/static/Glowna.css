@@ -602,3 +602,83 @@
   font-weight: 700 !important;
   text-shadow: 2px 0px 8px rgba(128,128,128,1) !important;
 }
+
+/*mine ------------------------------------*/
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-container {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.progress-bar {
+  margin-top: 20px;
+  width: 80%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #e00505;
+  color: #4CAF50;
+  overflow: hidden;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.button-container .btn {
+  padding: 8px 70px;
+  background-color: #5507af; /* Button color */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.7s;
+}
+
+
+.button-container .btn:hover {
+  background-color: #8b5fbf; /* Button color on hover */
+}
+.image-container img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.button-container .value-indicator {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px;
+  background-color: #329725; /* Background color for the indicator */
+  border-radius: 8px;
+  margin-right: 5px; /* Adjust the spacing between the indicator and buttons aaaa*/
+}
+
+.progress-bar::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+.progress-bar::-webkit-progress-value {
+  background-color: #4CAF50;
+}
+
+.progress-bar::-moz-progress-bar {
+  background-color: #4CAF50;
+}

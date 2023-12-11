@@ -624,3 +624,32 @@
     margin-right: 0;
   }
 }
+
+.u-progress-container {
+  margin: 20px 0;
+  margin-top: 100px;
+}
+.napis{
+  color: #e00505;
+}
+.u-progress-bar {
+  margin-top: 100px;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #e00505;
+  color: #4CAF50;
+  overflow: hidden;
+}
+
+.u-progress-bar::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+.u-progress-bar::-webkit-progress-value {
+  background-color: #4CAF50;
+}
+
+.progress-bar::-moz-progress-bar {
+  background-color: #4CAF50;
+}
