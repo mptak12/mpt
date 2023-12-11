@@ -32,6 +32,7 @@
 borders: top right bottom left !important
 
 var offerId = 0
+var offerName = ""
 
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="{% url 'main' %}" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
@@ -77,22 +78,22 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="854" src="{% static all.0.picture %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1"  src="{% static all.0.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
                   <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.0.type}} {{ all.0.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>{{all.0.description}} Kwota: {{all.0.donations_amount}} Cel: {{all.0.donation_target}}</p><!--/product_content_content-->
+                  <p>{{all.0.description}} </p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
 
-                <a href="#sec-9a2f" onclick="getOfferId({{all.0.pk}})" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.0.donations_amount}}/{{all.0.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.0.donations_amount}}" max="{{all.0.donation_target}}"></progress>
+                </div>
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.0.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -103,21 +104,22 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="857" src= "{% static 'images/6e10784cd6c1fd866182c59ddff98d848772441ef7bff0d0aa6ffc6cb6ab515291c8569baef4f82ab5bdb9036e3e0084d486d9d6273cd59492a5ce_1280.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="857" src= "{% static all.1.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.1.type}} {{ all.1.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.1.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" onclick="getOfferId('2')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.1.donations_amount}}" max="{{all.1.donation_target}}"></progress>
+                </div>
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.1.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -128,21 +130,22 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="960" src= "{% static 'images/6b668d979f0b144e77697b5340435aea80017de34fc93536c5674b573c1db7b2d5233e853459f21331d929e0f79eb19b304c72bb5562dc9f15087c_1280.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="960" src= "{% static all.2.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.2.type}} {{ all.2.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.2.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" onclick="getOfferId('3')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.2.donations_amount}}" max="{{all.2.donation_target}}"></progress>
+                </div>
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.2.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -153,21 +156,22 @@ var offerId = 0
       <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="custom-expanded u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-top u-container-layout-1"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1600" data-image-height="1000" src="{% static 'images/cute-baby-animal-pictures-zzdaek1h4l810z9w.jpg' %}"><!--/product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1600" data-image-height="1000" src="{% static all.3.picture %}"><!--/product_image-->
             <div class="custom-expanded u-align-center u-container-style u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-border-3 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{all.3.type}} {{ all.3.name }}<!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
-                <div>
-                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">50/100</div>
-                  <progress class="u-progress-bar" value="50" max="100"></progress>
-                </div>
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-2"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p>{{all.3.description}}</p><!--/product_content_content-->
                 </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"WPŁAĆ"}--><!--/options_json-->
-                <a href="#sec-9a2f" onclick="getOfferId('4')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
+
+                <div>
+                  <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1">{{all.3.donations_amount}}/{{all.3.donation_target}}</div>
+                  <progress class="u-progress-bar" value="{{all.3.donations_amount}}" max="{{all.3.donation_target}}"></progress>
+                </div>
+                <a href="#sec-9a2f" onclick="getOfferId('{{all.3.pk}}')" class="u-border-none u-btn u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->WPŁAĆ<!--/product_button_content--></a><!--/product_button-->
               </div>
             </div>
           </div>
@@ -255,14 +259,14 @@ var offerId = 0
   <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
     <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
-          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
-          <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
-          <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
+          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłata</h5>
+          <!--<h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2" id="nameDisplay"> NAPIS </h6>-->
+          <img class="u-image u-image-circle u-image-1" src= "{% static 'images/sausage.jpg' %}" alt="" data-image-width="1600" data-image-height="900">
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
           <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
           <p class="u-custom-font u-font-roboto-slab u-text u-text-3">Blik</p>
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
-          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://pixabay.com/get/gfef8be3f1b49034449a0866d298c10b7c76eac3c55cb941f2038ebe141b5c6cc1886bc1f13691d7014f509167df3a3a8332219eec89136f2f275ec3b970281e9_1280.png" alt="" data-image-width="1280" data-image-height="640">
+          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://www.paypalobjects.com/marketing/web/US/en/rebrand/Mobile-apps/mobile-apps--card-content--pp-business--for=all.jpg" alt="" data-image-width="1280" data-image-height="640">
           <p class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</p>
           <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
           <p class="u-custom-font u-font-roboto-slab u-text u-text-5">&nbsp; &nbsp; &nbsp;Bank</p>
@@ -306,14 +310,15 @@ var offerId = 0
               </script>
 
               <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
-              <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
+<!--<div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>-->
               <input type="hidden" value="" name="recaptchaResponse">
               <input type="hidden" name="formServices" value="">
             </form>
           </div>
         </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
       </div>
-    </section><style>.u-dialog-section-7 .u-dialog-1 {
+    </section>
+  <style>.u-dialog-section-7 .u-dialog-1 {
   width: 570px;
   min-height: 941px;
   height: auto;
