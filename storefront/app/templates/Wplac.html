@@ -283,17 +283,8 @@ var offerName = ""
               </div>
 
               <script>
-              function changeName() {
-                var nameDisplay = document.getElementById("nameDisplay");
-                nameDisplay.value = "Oferta: " + offerName;
-                alert("Ale zmiana wow")
-              }
-              </script>
-
-              <script>
               function getOfferId(ofID) {
                 offerId = ofID
-                changeName()
               }
 
               function reloadPage() {
@@ -318,7 +309,7 @@ var offerName = ""
               </script>
 
               <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
-              <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
+<!--<div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>-->
               <input type="hidden" value="" name="recaptchaResponse">
               <input type="hidden" name="formServices" value="">
             </form>

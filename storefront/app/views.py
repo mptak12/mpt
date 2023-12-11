@@ -1,3 +1,5 @@
+import decimal
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Animal
@@ -32,7 +34,7 @@ def dotation_page(request):
         animal_val = request.POST.get('donation_value')
 
         a = Animal.objects.get(pk=animal_pk)
-        a.donations_amount += int(animal_val)
+        a.donations_amount += decimal.Decimal(animal_val.replace(',', '.').strip('-'))
         a.total_donations += 1
         a.save()
     return render(request, "Wplac.html", {"all": all_animals})
