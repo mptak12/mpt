@@ -93,7 +93,9 @@ borders: top right bottom left !important
           <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 button-container">
             <button class=" u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator"> {{all.0.donations_amount}}/{{all.0.donation_target}} </div>
-            <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            <a href="{% url 'auctions' %}">
+              <button onclick="{% url 'auctions' %}" class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            </a>
           </div>
           <div class="progress-bar-container">
             <progress class="progress-bar" value="{{all.0.donations_amount}}" max="{{all.0.donation_target}}"></progress>
@@ -107,7 +109,9 @@ borders: top right bottom left !important
           <div class="button-container">
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.1.donations_amount}}/{{all.1.donation_target}}</div>
-            <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            <a href="{% url 'auctions' %}">
+              <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            </a>
           </div>
           <div class="progress-bar-container">
             <progress class="progress-bar" value="30" max="100"></progress>
@@ -121,7 +125,9 @@ borders: top right bottom left !important
           <div class="button-container">
             <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Wpłać</button>
             <div class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 value-indicator">{{all.2.donations_amount}}/{{all.2.donation_target}}</div>
-            <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            <a href="{% url 'auctions' %}">
+              <button class="u-align-center u-custom-font u-font-roboto-slab u-subtitle u-text u-text-white u-text-1 btn">Licytuj</button>
+            </a>
           </div>
           <div class="progress-bar-container">
             <progress class="progress-bar" value="{{all.2.donations_amount}}" max="{{all.2.donation_target}}"></progress>
