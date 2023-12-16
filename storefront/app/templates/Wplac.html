@@ -297,15 +297,21 @@ var offerName = ""
                 function getValueAndId() {
                     var textareaValue = document.getElementById('email-a0fb').value;
 
-                    $.ajax({
-                      type: 'POST',
-                      url:'',
-                      data: { 'donation_value': textareaValue, 'offer_pk': offerId },
-                      success: function(){
-                          alert('Donated!!');
-                          reloadPage();
-                      }
-                    })
+                    if (parseInt(textareaValue) > 0) {
+                      $.ajax({
+                        type: 'POST',
+                        url:'',
+                        data: { 'donation_value': textareaValue, 'offer_pk': offerId },
+                        success: function(){
+                            alert('Dziękujemy za wsparcie zbiórki!!');
+                            reloadPage();
+                        }
+                      });
+                    }
+                    else {
+                      alert('Wpisz poprawną kwotę!!');
+                      reloadPage();
+                    }
                 }
               </script>
 
