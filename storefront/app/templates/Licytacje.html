@@ -70,88 +70,32 @@ borders: top right bottom left !important
           </div>
         </div>
       </div></header>
-    <section class="u-clearfix u-grey-80 u-section-1" id="sec-fe7f"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-1">
-        <div class="u-container-layout u-valign-bottom u-container-layout-1"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="{% static 'images/49e35fb156682e0fe069908b8ee3032ee967d46ec37ac81c3ddfeb3f9503154f283e7a71f3ea9c093b19863952c91bd453197463d2052fc2e9ee6e_1280.jpg' %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-1">
-            <div class="u-container-layout u-container-layout-2"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-3">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-2" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-4">Kupując ten produkt wspierasz zbiórkę:</h4>
-            </div>
-          </div>
-        </div>
+      {% for auction in auctions_page %}
       </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
-        <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static 'images/1949a5ea0ddbc3494661a77794e49131a64eacd2d115d6adfa5af55fb489286abbc0ec32d0a58621cb4b57e2687bc88a885ddbd924695a2ef3c937_1280.jpg' %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
-            <div class="u-container-layout u-container-layout-4"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
+        <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
+          <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static auction.picture %}"><!--/product_image-->
+            <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
+              <div class="u-container-layout u-container-layout-4"><!--product_title-->
+                <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                </h2><!--/product_title--><!--product_content-->
+                <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
+                  <p>{{auction.description}}</p><!--/product_content_content-->
+                </div><!--/product_content-->
+                <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
+                <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
+                <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
+                <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
+              </div>
             </div>
           </div>
-        </div>
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-3">
-        <div class="u-container-layout u-container-layout-5"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-5" data-image-width="1280" data-image-height="853" src="{% static 'images/72c64e4b2708e96bc79f63cd38c2c96559a1b269a9fa99b386ad5f52d44dd3bb513e22c8a24f255f3612dc25763a33bc464ac720a148c581021e2b_1280.jpg' %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-3">
-            <div class="u-container-layout u-container-layout-6"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-9">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-10"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-11">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-3 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-6" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-12">Kupując ten produkt wspierasz zbiórkę:</h4>
-            </div>
-          </div>
-        </div>
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-4">
-        <div class="u-container-layout u-valign-bottom u-container-layout-7"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-7" data-image-width="1280" data-image-height="853" src="{% static 'images/eb597580d9106cf838c74fb4fd823c7c35e479283ae2756e41c02ee26fa01732e8cd834f9413bbdcbb685cce6b27c4864ab6a5959b44df5c73d761_1280.jpg' %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-4">
-            <div class="u-container-layout u-container-layout-8"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-13">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-14"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-15">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-4 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-8" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-16">Kupując ten produkt wspierasz zbiórkę:</h4>
-            </div>
-          </div>
-        </div>
       </div><!--/product_item--><!--/product-->
       <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
     </section>
-    
-    
-    
+    {% endfor %}
+
+
     <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
         <div class="custom-expanded u-align-center u-layout-grid u-list u-list-1">
           <div class="u-repeater u-repeater-1">
@@ -165,6 +109,68 @@ borders: top right bottom left !important
             </div>
           </div>
         </div>
+  
+
+
+
+        <style>
+          .pagination {
+              display: flex;
+              justify-content: center;
+          }
+      
+          .pagination .page-item {
+              margin-right: 50px; /* Dodatkowy margines między numerami stron */
+          }
+      </style>
+      
+
+<!-- Pętla po aukcjach na aktualnej stronie -->
+
+
+<!-- Dodaj resztę informacji o aukcji -->
+
+
+<!-- Wyświetlanie numerów stron -->
+<nav aria-label="Page navigation example">
+<ul class="pagination">
+    <!-- Strzałki nawigacyjne do poprzednich stron -->
+    {% if auctions_page.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="First">
+                <span aria-hidden="true">««</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+    {% endif %}
+
+    <!-- Numeracja stron -->
+    {% for num in auctions_page.paginator.page_range %}
+        <li class="page-item {% if num == auctions_page.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+    {% endfor %}
+
+    <!-- Strzałki nawigacyjne do następnych stron -->
+    {% if auctions_page.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">»</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.paginator.num_pages }}" aria-label="Last">
+                <span aria-hidden="true">»»</span>
+            </a>
+        </li>
+    {% endif %}
+</ul>
+</nav>
+
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
@@ -620,5 +626,11 @@ borders: top right bottom left !important
   .u-dialog-section-4 .u-icon-2 {
     right: 20px;
   }
+  
 }</style>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body></html>
