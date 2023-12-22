@@ -50,3 +50,30 @@ class Donation(models.Model):
 
     def __str__(self):
         return f"Donation from {self.user_id} to {self.animal_id}. Amount: {self.amount}"
+    
+
+class Item(models.Model):
+    name = models.CharField(max_length=50)
+    animal_id = models.ForeignKey(Animal, on_delete=models.SET_NULL, null=True)
+    description = models.TextField()
+    picture = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
+    due_date = models.DateField(blank=True, null=True)
+
+    def set_default_due_date(self):
+        if not self.due_date:
+            self.due_date = self.animal_id.due_date
+
+    def save(self, *args, **kwargs):
+        self.set_default_due_date()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.name} {self.price}"
+    
+class Purchase(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    items = models.ManyToManyField(Item)
+
+    def __str__(self):
+        return f"User: {self.user_id}\n Items: {self.items}"
