@@ -13,6 +13,7 @@
     <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.13, nicepage.com">
     <meta name="referrer" content="origin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Roboto+Slab:100,200,300,400,500,600,700,800,900">
     
@@ -150,7 +151,45 @@ borders: top right bottom left !important
       <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
     </section>
     
-    
+    <div class="plus-button-container">
+      <a id="show-popup" class="plus-button-style"><i class="fa-solid fa-circle-plus"></i></a>
+      <span class="button-span">Dodaj zbiorke</span>
+      <audio id="button-sound" src="{% static 'images/bark.mp3' %}"></audio>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay">
+      <div class="popup-window">
+          <span class="popup-close-button" id="popup-close-button">&times;</span>
+          <h2>Registration Info</h2>
+          <form id="registrationForm">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name">
+              </div>
+              <div class="form-group">
+                  <label for="birthdate">Birthdate</label>
+                  <input type="date" id="birthdate" name="birthdate">
+              </div>
+              <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <select id="gender" name="gender">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email">
+              </div>
+              <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone">
+              </div>
+              <button type="submit">Submit</button>
+          </form>
+      </div>
+  </div>
     
     <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
         <div class="custom-expanded u-align-center u-layout-grid u-list u-list-1">
@@ -225,138 +264,192 @@ borders: top right bottom left !important
       </p>
       <a class="u-link" href="" target="_blank">
         <span>WYSIWYG Web Builder</span>
-      </a>. 
-    </section>
-  <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-4" id="sec-9a2f">
-      <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
-        <div class="u-container-layout u-container-layout-1">
-          <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
-          <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
-          <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
-          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
-          <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
-          <p class="u-custom-font u-font-roboto-slab u-text u-text-3">Blik</p>
-          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
-          <img class="u-image u-image-circle u-image-contain u-image-3" src="https://pixabay.com/get/gfef8be3f1b49034449a0866d298c10b7c76eac3c55cb941f2038ebe141b5c6cc1886bc1f13691d7014f509167df3a3a8332219eec89136f2f275ec3b970281e9_1280.png" alt="" data-image-width="1280" data-image-height="640">
-          <p class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</p>
-          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
-          <p class="u-custom-font u-font-roboto-slab u-text u-text-5">&nbsp; &nbsp; &nbsp;Bank</p>
-          <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-4"></div>
-          <div class="custom-expanded u-form u-form-1">
-            <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 10px;">
-              <div class="u-form-group u-form-message u-label-none">
-                <label for="email-a0fb" class="u-label">[PLN]</label>
-                <textarea placeholder="Podaj kwotę wpłaty" id="email-a0fb" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
+      </a>.
+      </section>
+      <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
+        <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
+              <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
+              <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
+              <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
+              <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
+              <p for="payment-blik" class="u-custom-font u-font-roboto-slab u-text u-text-3">Blik</label>
+              <input type="radio" id="payment-blik" name="payment-method" class="u-radio-button">
+              <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-2"></div>
+              <img class="u-image u-image-circle u-image-contain u-image-3" src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" alt="" data-image-width="1280" data-image-height="640">
+              <p for="payment-paypal" class="u-custom-font u-font-roboto-slab u-text u-text-4">PayPal</label>
+              <input type="radio" id="payment-paypal" name="payment-method" class="u-radio-button">
+              <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-3"></div><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/924961.png' %}" alt=""></span>
+              <p for="payment-bank"class="u-custom-font u-font-roboto-slab u-text u-text-5">Bank</label>
+              <input type="radio" id="payment-bank" name="payment-method" class="u-radio-button">
+              <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-4"></div>
+              <div class="custom-expanded u-form u-form-1">
+                <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 10px;">
+                  <div class="u-form-group u-form-message u-label-none">
+                    <label for="email-a0fb" class="u-label">[PLN]</label>
+                    <textarea placeholder="Podaj kwotę wpłaty" id="email-a0fb" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
+                  </div>
+                  <div class="u-align-left u-form-group u-form-submit u-label-none">
+                    <a href="#" onclick="getValueAndId()" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
+
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                  </div>
+                  <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
+                  <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
+                  <input type="hidden" value="" name="recaptchaResponse">
+                  <input type="hidden" name="formServices" value="">
+                </form>
               </div>
-              <div class="u-align-left u-form-group u-form-submit u-label-none">
-                <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
-                <input type="submit" value="submit" class="u-form-control-hidden">
-              </div>
-              <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
-              <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
-              <input type="hidden" value="" name="recaptchaResponse">
-              <input type="hidden" name="formServices" value="">
-            </form>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
           </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
-      </div>
-    </section><style>.u-dialog-section-4 .u-dialog-1 {
-  width: 570px;
+
+
+
+          
+          <script>
+            // Get the button that opens the popup
+            var btn = document.getElementById("show-popup");
+
+            // Get the element that closes the popup
+            var closeBtn = document.getElementById("popup-close-button");
+
+            // Get the popup overlay element
+            var popup = document.getElementById("popup-overlay");
+
+            // When the user clicks on the button, open the popup
+            btn.onclick = function() {
+                playSound()
+                popup.style.display = "block";
+            }
+
+            // When the user clicks on the close button, close the popup
+            closeBtn.onclick = function() {
+                popup.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the popup, close it
+            window.onclick = function(event) {
+                if (event.target == popup) {
+                    popup.style.display = "none";
+                }
+            }
+          </script>
+
+          <script>
+            function playSound() {
+              
+              var sound = document.getElementById("button-sound");
+              if (sound.paused) {
+                sound.play().catch(e => {
+                  console.error("Playback was prevented. Try a user gesture to start playback.", e);
+                });
+              } else {
+                sound.currentTime = 0; // Rewind the sound
+              }
+            }
+          </script>
+
+        </section>
+        
+        
+<style>.u-dialog-section-7 .u-dialog-1 {
+ width: 570px;
   min-height: 941px;
   height: auto;
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
   margin: 10px auto 60px;
 }
 
-.u-dialog-section-4 .u-container-layout-1 {
+.u-dialog-section-7 .u-container-layout-1 {
   padding: 28px 0 35px;
 }
 
-.u-dialog-section-4 .u-text-1 {
+.u-dialog-section-7 .u-text-1 {
   font-size: 3rem;
   font-weight: 700;
   margin: 6px 55px 0 35px;
 }
 
-.u-dialog-section-4 .u-text-2 {
+.u-dialog-section-7 .u-text-2 {
   font-size: 2.25rem;
   font-weight: 400;
   margin: 8px auto 0;
 }
 
-.u-dialog-section-4 .u-image-1 {
+.u-dialog-section-7 .u-image-1 {
   width: 160px;
   height: 160px;
   margin: 14px 199px 0 auto;
 }
 
-.u-dialog-section-4 .u-line-1 {
+.u-dialog-section-7 .u-line-1 {
   width: 456px;
   border-style: solid;
   margin: 20px auto 0;
 }
 
-.u-dialog-section-4 .u-image-2 {
+.u-dialog-section-7 .u-image-2 {
   width: 169px;
   height: 136px;
   margin: 7px auto 0 58px;
 }
 
-.u-dialog-section-4 .u-text-3 {
+.u-dialog-section-7 .u-text-3 {
   font-size: 1.875rem;
   font-weight: 700;
   margin: -92px 35px 0 264px;
 }
 
-.u-dialog-section-4 .u-line-2 {
+.u-dialog-section-7 .u-line-2 {
   width: 456px;
   border-style: solid;
   margin: 25px auto 0;
 }
 
-.u-dialog-section-4 .u-image-3 {
+.u-dialog-section-7 .u-image-3 {
   width: 119px;
   height: 119px;
   margin: 13px auto 0 75px;
 }
 
-.u-dialog-section-4 .u-text-4 {
+.u-dialog-section-7 .u-text-4 {
   font-size: 1.875rem;
   font-weight: 700;
   margin: -84px 29px 0 270px;
 }
 
-.u-dialog-section-4 .u-line-3 {
+.u-dialog-section-7 .u-line-3 {
   width: 456px;
   border-style: solid;
   margin: 40px auto 0;
 }
 
-.u-dialog-section-4 .u-icon-1 {
+.u-dialog-section-7 .u-icon-1 {
   width: 85px;
   height: 85px;
   margin: 25px auto 0 75px;
   padding: 0;
 }
 
-.u-dialog-section-4 .u-text-5 {
+.u-dialog-section-7 .u-text-5 {
   font-size: 1.875rem;
   font-weight: 700;
   margin: -63px 60px 0 239px;
 }
 
-.u-dialog-section-4 .u-line-4 {
+.u-dialog-section-7 .u-line-4 {
   width: 456px;
   border-style: solid;
   margin: 50px auto 0;
 }
 
-.u-dialog-section-4 .u-form-1 {
+.u-dialog-section-7 .u-form-1 {
   height: 93px;
   margin: 19px 29px 0 41px;
 }
 
-.u-dialog-section-4 .u-btn-1 {
+.u-dialog-section-7 .u-btn-1 {
   --radius: 40px;
   text-transform: uppercase;
   background-image: none;
@@ -364,7 +457,7 @@ borders: top right bottom left !important
   padding: 14px 30px;
 }
 
-.u-dialog-section-4 .u-icon-2 {
+.u-dialog-section-7 .u-icon-2 {
   width: 20px;
   height: 20px;
   left: auto;
@@ -375,81 +468,81 @@ borders: top right bottom left !important
 }
 
 @media (max-width: 1199px) {
-  .u-dialog-section-4 .u-text-1 {
+  .u-dialog-section-7 .u-text-1 {
     margin-right: 55px;
     margin-left: 35px;
   }
 
-  .u-dialog-section-4 .u-text-2 {
+  .u-dialog-section-7 .u-text-2 {
     margin-top: 42px;
   }
 
-  .u-dialog-section-4 .u-image-1 {
+  .u-dialog-section-7 .u-image-1 {
     width: 160px;
     height: 160px;
     margin-top: -59px;
     margin-right: 199px;
   }
 
-  .u-dialog-section-4 .u-line-1 {
+  .u-dialog-section-7 .u-line-1 {
     width: 456px;
     margin-top: 51px;
   }
 
-  .u-dialog-section-4 .u-image-2 {
+  .u-dialog-section-7 .u-image-2 {
     width: 169px;
     height: 137px;
     margin-top: 80px;
   }
 
-  .u-dialog-section-4 .u-text-3 {
+  .u-dialog-section-7 .u-text-3 {
     margin-top: -92px;
     margin-right: 35px;
     margin-left: 264px;
   }
 
-  .u-dialog-section-4 .u-line-2 {
+  .u-dialog-section-7 .u-line-2 {
     width: 456px;
     margin-top: 3px;
   }
 
-  .u-dialog-section-4 .u-image-3 {
+  .u-dialog-section-7 .u-image-3 {
     width: 119px;
     height: 119px;
     margin-top: 65px;
     margin-left: 75px;
   }
 
-  .u-dialog-section-4 .u-text-4 {
+  .u-dialog-section-7 .u-text-4 {
     margin-top: -95px;
     margin-right: 29px;
     margin-left: 270px;
   }
 
-  .u-dialog-section-4 .u-line-3 {
+  .u-dialog-section-7 .u-line-3 {
     width: 456px;
     margin-top: 46px;
   }
 
-  .u-dialog-section-4 .u-icon-1 {
+  .u-dialog-section-7 .u-icon-1 {
     width: 85px;
     height: 85px;
     margin-top: 41px;
     margin-left: 75px;
   }
 
-  .u-dialog-section-4 .u-text-5 {
+  .u-dialog-section-7 .u-text-5 {
     margin-top: -63px;
     margin-right: 60px;
     margin-left: 239px;
   }
 
-  .u-dialog-section-4 .u-line-4 {
+  .u-dialog-section-7 .u-line-4 {
     width: 456px;
     margin-top: 75px;
   }
 
-  .u-dialog-section-4 .u-form-1 {
+  .u-dialog-section-7 .u-form-1 {
     margin-top: 10px;
     margin-right: 29px;
     margin-left: 41px;
@@ -457,84 +550,84 @@ borders: top right bottom left !important
 }
 
 @media (max-width: 991px) {
-  .u-dialog-section-4 .u-container-layout-1 {
+  .u-dialog-section-7 .u-container-layout-1 {
     padding-bottom: 30px;
   }
 
-  .u-dialog-section-4 .u-text-3 {
+  .u-dialog-section-7 .u-text-3 {
     margin-top: -92px;
   }
 
-  .u-dialog-section-4 .u-icon-2 {
+  .u-dialog-section-7 .u-icon-2 {
     top: 32px;
     right: 30px;
   }
 }
 
 @media (max-width: 767px) {
-  .u-dialog-section-4 .u-dialog-1 {
+  .u-dialog-section-7 .u-dialog-1 {
     width: 540px;
   }
 
-  .u-dialog-section-4 .u-container-layout-1 {
+  .u-dialog-section-7 .u-container-layout-1 {
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  .u-dialog-section-4 .u-text-1 {
+  .u-dialog-section-7 .u-text-1 {
     margin-right: 40px;
     margin-left: 20px;
   }
 
-  .u-dialog-section-4 .u-text-2 {
+  .u-dialog-section-7 .u-text-2 {
     margin-top: 154px;
   }
 
-  .u-dialog-section-4 .u-image-1 {
+  .u-dialog-section-7 .u-image-1 {
     margin-top: -59px;
   }
 
-  .u-dialog-section-4 .u-image-2 {
+  .u-dialog-section-7 .u-image-2 {
     margin-top: -32px;
   }
 
-  .u-dialog-section-4 .u-text-3 {
+  .u-dialog-section-7 .u-text-3 {
     margin-top: 36px;
     margin-right: 20px;
     margin-left: 249px;
   }
 
-  .u-dialog-section-4 .u-line-2 {
+  .u-dialog-section-7 .u-line-2 {
     margin-top: -13px;
   }
 
-  .u-dialog-section-4 .u-image-3 {
+  .u-dialog-section-7 .u-image-3 {
     margin-top: -47px;
   }
 
-  .u-dialog-section-4 .u-text-4 {
+  .u-dialog-section-7 .u-text-4 {
     margin-right: 14px;
     margin-left: 255px;
   }
 
-  .u-dialog-section-4 .u-line-3 {
+  .u-dialog-section-7 .u-line-3 {
     margin-top: 166px;
   }
 
-  .u-dialog-section-4 .u-icon-1 {
+  .u-dialog-section-7 .u-icon-1 {
     margin-top: -79px;
   }
 
-  .u-dialog-section-4 .u-text-5 {
+  .u-dialog-section-7 .u-text-5 {
     margin-right: 45px;
     margin-left: 224px;
   }
 
-  .u-dialog-section-4 .u-line-4 {
+  .u-dialog-section-7 .u-line-4 {
     margin-top: 139px;
   }
 
-  .u-dialog-section-4 .u-form-1 {
+  .u-dialog-section-7 .u-form-1 {
     margin-top: -78px;
     margin-right: 14px;
     margin-left: 26px;
@@ -542,82 +635,82 @@ borders: top right bottom left !important
 }
 
 @media (max-width: 575px) {
-  .u-dialog-section-4 .u-dialog-1 {
+  .u-dialog-section-7 .u-dialog-1 {
     width: 340px;
   }
 
-  .u-dialog-section-4 .u-container-layout-1 {
+  .u-dialog-section-7 .u-container-layout-1 {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .u-dialog-section-4 .u-text-1 {
+  .u-dialog-section-7 .u-text-1 {
     margin-left: 0;
     margin-right: 0;
   }
 
-  .u-dialog-section-4 .u-text-2 {
+  .u-dialog-section-7 .u-text-2 {
     margin-top: 106px;
   }
 
-  .u-dialog-section-4 .u-image-1 {
+  .u-dialog-section-7 .u-image-1 {
     margin-top: -59px;
     margin-right: 180px;
   }
 
-  .u-dialog-section-4 .u-line-1 {
+  .u-dialog-section-7 .u-line-1 {
     width: 340px;
   }
 
-  .u-dialog-section-4 .u-image-2 {
+  .u-dialog-section-7 .u-image-2 {
     margin-top: 16px;
   }
 
-  .u-dialog-section-4 .u-text-3 {
+  .u-dialog-section-7 .u-text-3 {
     margin-top: -12px;
     margin-right: 0;
     margin-left: 69px;
   }
 
-  .u-dialog-section-4 .u-line-2 {
+  .u-dialog-section-7 .u-line-2 {
     width: 340px;
     margin-top: -13px;
   }
 
-  .u-dialog-section-4 .u-image-3 {
+  .u-dialog-section-7 .u-image-3 {
     margin-top: 1px;
   }
 
-  .u-dialog-section-4 .u-text-4 {
+  .u-dialog-section-7 .u-text-4 {
     margin-right: 0;
     margin-left: 69px;
   }
 
-  .u-dialog-section-4 .u-line-3 {
+  .u-dialog-section-7 .u-line-3 {
     width: 340px;
     margin-top: 118px;
   }
 
-  .u-dialog-section-4 .u-icon-1 {
+  .u-dialog-section-7 .u-icon-1 {
     margin-top: -31px;
   }
 
-  .u-dialog-section-4 .u-text-5 {
+  .u-dialog-section-7 .u-text-5 {
     margin-right: 0;
     margin-left: 69px;
   }
 
-  .u-dialog-section-4 .u-line-4 {
+  .u-dialog-section-7 .u-line-4 {
     width: 340px;
   }
 
-  .u-dialog-section-4 .u-form-1 {
+  .u-dialog-section-7 .u-form-1 {
     margin-top: -78px;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .u-dialog-section-4 .u-icon-2 {
+  .u-dialog-section-7 .u-icon-2 {
     right: 20px;
   }
 }</style>
