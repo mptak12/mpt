@@ -160,36 +160,39 @@ borders: top right bottom left !important
     <div class="popup-overlay" id="popup-overlay">
       <div class="popup-window">
           <span class="popup-close-button" id="popup-close-button">&times;</span>
-          <h2>Registration Info</h2>
-          <form id="registrationForm">
+          <h2>Formularz Oferty Licytacji</h2>
+          <form id="collectionForm">
               <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name">
+                  <label for="collectionName">Tytuł oferty</label>
+                  <input type="text" id="collectionName" name="collectionName">
               </div>
               <div class="form-group">
-                  <label for="birthdate">Birthdate</label>
-                  <input type="date" id="birthdate" name="birthdate">
+                  <label for="description">Opis</label>
+                  <textarea id="description" name="description"></textarea>
               </div>
               <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <select id="gender" name="gender">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
+                  <label for="imageUpload">Dodaj zdjęcie</label>
+                  <input type="file" id="imageUpload" name="imageUpload">
+              </div>
+              <div class="form-group">
+                  <label for="targetAmount">Cena</label>
+                  <input type="text" id="targetAmount" name="targetAmount">
+              </div>
+              <!-- Dropdown list added here -->
+              <div class="form-group">
+                  <label for="dropdownList">Wybierz cel dotacji</label>
+                  <select id="dropdownList" name="dropdownList">
+                      <option value="category1">Kategoria 1</option>
+                      <option value="category2">Kategoria 2</option>
+                      <option value="category3">Kategoria 3</option>
+                      <!-- Add more options as needed -->
                   </select>
               </div>
-              <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email">
-              </div>
-              <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone">
-              </div>
-              <button type="submit">Submit</button>
+              <button type="submit">Zatwierdź</button>
           </form>
       </div>
   </div>
+  
     
     <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
         <div class="custom-expanded u-align-center u-layout-grid u-list u-list-1">
