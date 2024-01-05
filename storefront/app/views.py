@@ -30,7 +30,20 @@ def dotation_page(request):
 
     if request.method == "POST":
         if request.POST.get('type') == 'addOffer':
-            print('hihi')
+            type_and_name = request.POST.get('name')
+            t, n = type_and_name.split()
+            newA = Animal.objects.create(name=n,
+                                         type=t,
+                                         description=request.POST.get('desc'),
+                                         picture=request.POST.get('img'),
+                                         total_donations=0,
+                                         donations_amount=0,
+                                         donation_target=request.POST.get('tgt'),
+                                         due_date=request.POST.get('endDate')
+                                         )
+
+            newA.save()
+
         else:
             print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
             animal_pk = request.POST.get('offer_pk')
