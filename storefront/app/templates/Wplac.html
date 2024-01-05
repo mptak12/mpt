@@ -394,11 +394,12 @@ var offerName = ""
                           processData: false,
                           contentType: false,
                           success: function () {
-                              alert('Dodano Obrazek!');
+                              alert('Dodano wpis!');
                               reloadPage();
                           },
-                          error: function () {
-                              alert('Error uploading image!');
+                          error: function (error) {
+                              var errorMessage = error.responseText;
+                              alert(errorMessage);
                           }
                       });
                   } else {

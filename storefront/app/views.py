@@ -3,7 +3,7 @@ import os
 import uuid
 
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Animal
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
@@ -47,14 +47,16 @@ def dotation_page(request):
     all_animals = Animal.objects.all
 
     if request.method == "POST":
-        if request.FILES is not None:
+        if 'imageUpload' in request.FILES:
             # save img
             uploaded_image = request.FILES['imageUpload']
             type_and_name = request.POST.get('collectionName')
+            if len(type_and_name.split()) != 2:
+                return JsonResponse({'error': 'Niepoprawna nazwa zbiórki'}, status=500)
             saved_path = save_uploaded_image(uploaded_image, f'{type_and_name}.png')
 
             saved_path = saved_path.split('images\\', 1)[1]
-            saved_path = saved_path.replace(" ", "-")
+            saved_path = saved_path.replace(" ", "_")
             # add animal
             t, n = type_and_name.split()
             newA = Animal.objects.create(name=n,
@@ -69,7 +71,7 @@ def dotation_page(request):
 
             newA.save()
 
-        else:
+        elif 'donation_value' in request.POST:
             print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
             animal_pk = request.POST.get('offer_pk')
             animal_val = request.POST.get('donation_value')
@@ -78,6 +80,9 @@ def dotation_page(request):
             a.donations_amount += decimal.Decimal(animal_val.replace(',', '.').strip('-'))
             a.total_donations += 1
             a.save()
+
+        else:
+            return JsonResponse({'error': "Dodaj obrazek"}, status=500)
     return render(request, "Wplac.html", {"all": all_animals})
 
 
