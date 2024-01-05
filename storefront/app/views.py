@@ -1,10 +1,12 @@
 import decimal
+import os
+import uuid
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Animal
 from django.views.decorators.csrf import csrf_exempt
-
+from django.conf import settings
 
 def main_page(request):
     #animal1 = Animal.objects.create(name='Kit', type='Cat')
@@ -24,21 +26,44 @@ def bump(request, pk):
     return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
 
 
+def save_uploaded_image(uploaded_file, name):
+    # Generate a unique filename using uuid
+    # unique_filename = str(uuid.uuid4()) + os.path.splitext(uploaded_file.name)[-1]
+
+    # Specify the destination path (assuming 'media/images/' as an example)
+    destination_path = os.path.join(settings.BASE_DIR, 'assets', 'images', name)
+
+    # Save the file to the specified destination
+    with open(destination_path, 'wb') as destination_file:
+        for chunk in uploaded_file.chunks():
+            destination_file.write(chunk)
+
+    # Return the path where the file is saved
+    return destination_path
+
+
 @csrf_exempt
 def dotation_page(request):
     all_animals = Animal.objects.all
 
     if request.method == "POST":
-        if request.POST.get('type') == 'addOffer':
-            type_and_name = request.POST.get('name')
+        if request.FILES is not None:
+            # save img
+            uploaded_image = request.FILES['imageUpload']
+            type_and_name = request.POST.get('collectionName')
+            saved_path = save_uploaded_image(uploaded_image, f'{type_and_name}.png')
+
+            saved_path = saved_path.split('images\\', 1)[1]
+            saved_path = saved_path.replace(" ", "-")
+            # add animal
             t, n = type_and_name.split()
             newA = Animal.objects.create(name=n,
                                          type=t,
-                                         description=request.POST.get('desc'),
-                                         picture=request.POST.get('img'),
+                                         description=request.POST.get('description'),
+                                         picture=saved_path,
                                          total_donations=0,
                                          donations_amount=0,
-                                         donation_target=request.POST.get('tgt'),
+                                         donation_target=request.POST.get('targetAmount'),
                                          due_date=request.POST.get('endDate')
                                          )
 

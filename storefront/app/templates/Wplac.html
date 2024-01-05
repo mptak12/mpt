@@ -380,29 +380,32 @@ var offerName = ""
               <script>
               var acceptButton = document.getElementById('submitOffers');
 
-              acceptButton.onclick = function() {
-                var name = document.getElementById('collectionName').value;
-                var desc = document.getElementById('description').value;
-                var img  = document.getElementById('imageUpload').value;
-                var tgt  = document.getElementById('targetAmount').value;
-                var end  = document.getElementById('endDate').value;
+              acceptButton.onclick = function () {
+                  var form = document.getElementById('collectionForm');
+                  var formData = new FormData(form);
 
-                if (parseInt(tgt) > 0) {
-                  $.ajax({
-                      type: 'POST',
-                      url:'',
-                      data: { 'type': 'addOffer', 'name': name, 'desc': desc, 'img': img, 'tgt': tgt, 'end': end},
-                      success: function(){
-                          alert('Dodano zbiórkę!')
-                          reloadPage();
-                      }
-                  });
-                }
-                else {
-                  alert('Wpisz poprawne wartości!!');
-                  reloadPage();
-                }
-              }
+                  var tgt = formData.get('targetAmount');  // Retrieve specific field value from FormData
+
+                  if (parseFloat(tgt) > 0) {
+                      $.ajax({
+                          type: 'POST',
+                          url: '',  // Update with your actual URL
+                          data: formData,
+                          processData: false,
+                          contentType: false,
+                          success: function () {
+                              alert('Dodano Obrazek!');
+                              reloadPage();
+                          },
+                          error: function () {
+                              alert('Error uploading image!');
+                          }
+                      });
+                  } else {
+                      alert('Wpisz poprawne wartości!!');
+                      reloadPage();
+                  }
+              };
               </script>
               <script>
                 function getValueAndId() {
