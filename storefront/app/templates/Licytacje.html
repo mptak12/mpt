@@ -70,30 +70,30 @@ borders: top right bottom left !important
           </div>
         </div>
       </div></header>
-      {% for auction in auctions_page %}
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-        <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
-          <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
-            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static auction.picture %}"><!--/product_image-->
-            <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
-              <div class="u-container-layout u-container-layout-4"><!--product_title-->
-                <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
-                </h2><!--/product_title--><!--product_content-->
-                <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
-                  <p>{{auction.description}}</p><!--/product_content_content-->
-                </div><!--/product_content-->
-                <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-                <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-                <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
-                <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
+      {% for item in items_page %}
+      <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
+          <div class="u-container-layout u-valign-bottom u-container-layout-3">
+              <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static item.picture %}">
+              <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
+                  <div class="u-container-layout u-container-layout-4">
+                      <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
+                          <a class="u-product-title-link" href="#"><!--product_title_content--> {{ item.name }} <!--/product_title_content--></a>
+                      </h2>
+                      <div class="u-product-control u-product-desc u-text u-text-6">
+                          <p>{{ item.description }}</p>
+                      </div>
+                      <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]: {{ item.price }}</p>
+                      <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link">
+                          Kup
+                      </a>
+                      <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
+                      <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
+                  </div>
               </div>
-            </div>
           </div>
-      </div><!--/product_item--><!--/product-->
+      </div>
       <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-    </section>
-    {% endfor %}
+  {% endfor %}
 
 
     <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
@@ -109,9 +109,6 @@ borders: top right bottom left !important
             </div>
           </div>
         </div>
-  
-
-
 
         <style>
           .pagination {
@@ -125,50 +122,41 @@ borders: top right bottom left !important
       </style>
       
 
-<!-- Pętla po aukcjach na aktualnej stronie -->
-
-
-<!-- Dodaj resztę informacji o aukcji -->
-
-
-<!-- Wyświetlanie numerów stron -->
+<!-- Paginacja -->
 <nav aria-label="Page navigation example">
-<ul class="pagination">
-    <!-- Strzałki nawigacyjne do poprzednich stron -->
-    {% if auctions_page.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page=1" aria-label="First">
-                <span aria-hidden="true">««</span>
-            </a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{ auctions_page.previous_page_number }}" aria-label="Previous">
-                <span aria-hidden="true">«</span>
-            </a>
-        </li>
-    {% endif %}
+  <ul class="pagination">
+      {% if items_page.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="?page=1" aria-label="First">
+                  <span aria-hidden="true">««</span>
+              </a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="?page={{ items_page.previous_page_number }}" aria-label="Previous">
+                  <span aria-hidden="true">«</span>
+              </a>
+          </li>
+      {% endif %}
 
-    <!-- Numeracja stron -->
-    {% for num in auctions_page.paginator.page_range %}
-        <li class="page-item {% if num == auctions_page.number %}active{% endif %}">
-            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-        </li>
-    {% endfor %}
+      {% for num in items_page.paginator.page_range %}
+          <li class="page-item {% if num == items_page.number %}active{% endif %}">
+              <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+          </li>
+      {% endfor %}
 
-    <!-- Strzałki nawigacyjne do następnych stron -->
-    {% if auctions_page.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ auctions_page.next_page_number }}" aria-label="Next">
-                <span aria-hidden="true">»</span>
-            </a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{ auctions_page.paginator.num_pages }}" aria-label="Last">
-                <span aria-hidden="true">»»</span>
-            </a>
-        </li>
-    {% endif %}
-</ul>
+      {% if items_page.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ items_page.next_page_number }}" aria-label="Next">
+                  <span aria-hidden="true">»</span>
+              </a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="?page={{ items_page.paginator.num_pages }}" aria-label="Last">
+                  <span aria-hidden="true">»»</span>
+              </a>
+          </li>
+      {% endif %}
+  </ul>
 </nav>
 
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
