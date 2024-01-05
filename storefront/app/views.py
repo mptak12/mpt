@@ -29,14 +29,17 @@ def dotation_page(request):
     all_animals = Animal.objects.all
 
     if request.method == "POST":
-        print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
-        animal_pk = request.POST.get('offer_pk')
-        animal_val = request.POST.get('donation_value')
+        if request.POST.get('type') == 'addOffer':
+            print('hihi')
+        else:
+            print("Wplacono " + request.POST.get('donation_value') + " Oferta:" + request.POST.get('offer_pk'))
+            animal_pk = request.POST.get('offer_pk')
+            animal_val = request.POST.get('donation_value')
 
-        a = Animal.objects.get(pk=animal_pk)
-        a.donations_amount += decimal.Decimal(animal_val.replace(',', '.').strip('-'))
-        a.total_donations += 1
-        a.save()
+            a = Animal.objects.get(pk=animal_pk)
+            a.donations_amount += decimal.Decimal(animal_val.replace(',', '.').strip('-'))
+            a.total_donations += 1
+            a.save()
     return render(request, "Wplac.html", {"all": all_animals})
 
 
