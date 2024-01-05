@@ -1,6 +1,6 @@
 import decimal
 import os
-import uuid
+from unidecode import unidecode
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -27,18 +27,13 @@ def bump(request, pk):
 
 
 def save_uploaded_image(uploaded_file, name):
-    # Generate a unique filename using uuid
-    # unique_filename = str(uuid.uuid4()) + os.path.splitext(uploaded_file.name)[-1]
-
-    # Specify the destination path (assuming 'media/images/' as an example)
-    destination_path = os.path.join(settings.BASE_DIR, 'assets', 'images', name)
+    destination_path = os.path.join(settings.BASE_DIR, 'static', 'images', name)
 
     # Save the file to the specified destination
     with open(destination_path, 'wb') as destination_file:
         for chunk in uploaded_file.chunks():
             destination_file.write(chunk)
 
-    # Return the path where the file is saved
     return destination_path
 
 
@@ -53,10 +48,10 @@ def dotation_page(request):
             type_and_name = request.POST.get('collectionName')
             if len(type_and_name.split()) != 2:
                 return JsonResponse({'error': 'Niepoprawna nazwa zbiórki'}, status=500)
-            saved_path = save_uploaded_image(uploaded_image, f'{type_and_name}.png')
 
-            saved_path = saved_path.split('images\\', 1)[1]
-            saved_path = saved_path.replace(" ", "_")
+            saved_path = save_uploaded_image(uploaded_image, f'{unidecode(type_and_name).replace(" ", "_")}.png')
+
+            saved_path = saved_path.split('static\\', 1)[1]
             # add animal
             t, n = type_and_name.split()
             newA = Animal.objects.create(name=n,
