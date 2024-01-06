@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_filters %}
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pl"><head>
@@ -74,19 +75,27 @@ borders: top right bottom left !important
     <section class="u-clearfix u-grey-80 u-section-1" id="sec-fe7f"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-product u-product-1">
         <div class="u-container-layout u-valign-bottom u-container-layout-1"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="{% static 'images/49e35fb156682e0fe069908b8ee3032ee967d46ec37ac81c3ddfeb3f9503154f283e7a71f3ea9c093b19863952c91bd453197463d2052fc2e9ee6e_1280.jpg' %}"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="{% static items.0.picture %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-1">
             <div class="u-container-layout u-container-layout-2"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.0.name }}<!--/product_title_content--></a>
               </h2><!--/product_title--><!--product_content-->
               <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                <p>{{ items.0.description }}</p><!--/product_content_content-->
               </div><!--/product_content-->
               <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-3">{{ items.0.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-2" alt="" data-image-width="1280" data-image-height="857">
-                  <img src={{ static "images/9035065_paw_icon.png" >
+              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
+              <div class="u-image u-image-circle u-image-2" data-image-width="100" data-image-height="50" >
+                {% with item_animal_id=items.0.animal_id %}
+                    {% with animal=animals|get_item:item_animal_id %}
+                        {% if animal %}
+                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
+                        {% else %}
+                            <p>No corresponding animal found for item</p>
+                        {% endif %}
+                    {% endwith %}
+                {% endwith %}
               </div>
               <h4 class="u-custom-font u-text u-text-font u-text-4">Kupując ten produkt wspierasz zbiórkę: {{ items.0.animal_id }}</h4>
             </div>
