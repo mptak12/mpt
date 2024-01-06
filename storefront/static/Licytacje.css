@@ -1,6 +1,11 @@
  .u-section-1 {
   background-image: none;
-  min-height: 2304px;
+  min-height: none;
+}
+
+/* Dodano nową klasę .dynamic-height, którą będziesz używać do określania wysokości w zależności od ilości zdjęć */
+.u-section-1.dynamic-height {
+  min-height: 2304px; /* Wysokość dla jednego zdjęcia, możesz dostosować według potrzeb */
 }
 
 .u-section-1 .u-product-1 {
@@ -295,7 +300,10 @@
 }
 
 @media (max-width: 1199px) {
-  .u-section-1 .u-product-1 {
+  .u-section-1.dynamic-height .u-product-1,
+  .u-section-1.dynamic-height .u-group-1
+  /* Dodaj inne sekcje produktów w przypadku, gdy używasz więcej niż jednej sekcji */
+  {
     width: 940px;
     margin-left: calc(((100% - 940px) / 2));
   }
