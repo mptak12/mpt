@@ -57,7 +57,7 @@ def auctions(request):
     all_items = Item.objects.all()
 
     # Określ liczbę przedmiotów na stronie
-    items_per_page = 2
+    items_per_page = 4
 
     # Utwórz obiekt paginacji
     paginator = Paginator(all_items, items_per_page)
