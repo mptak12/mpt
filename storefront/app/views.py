@@ -1,7 +1,4 @@
 import decimal
-import os
-from unidecode import unidecode
-
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Animal, Item
@@ -9,8 +6,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def main_page(request):
-    #animal1 = Animal.objects.create(name='Kit', type='Cat')
-    #animal1.save()
+    # animal1 = Animal.objects.create(name='Kit', type='Cat')
+    # animal1.save()
 
     all_animals = Animal.objects.all
     return render(request, "index.html", {"all": all_animals})
@@ -81,14 +78,25 @@ def dotation_page(request):
     return render(request, "Wplac.html", {"all": all_animals})
 
 
-def about_us(request):
-    return render(request, "O-nas.html")
-
-
+@csrf_exempt
 def auctions(request):
     all_items = Item.objects.all
     all_animals = Animal.objects.all
+
+    if request.method == "POST":
+        item_pk = request.POST.get('offer_pk')
+        val = request.POST.get('value')
+        print("Wpłacono" + val + "na item o kluczu" + item_pk)
+
+        item = Item.objects.get(pk=item_pk)
+        item.price = int(val)
+        item.save()
+
     return render(request, "Licytacje.html", {"items": all_items, "animals": all_animals})
+
+
+def about_us(request):
+    return render(request, "O-nas.html")
 
 
 def login(request):
