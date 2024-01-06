@@ -4,9 +4,9 @@ from unidecode import unidecode
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Animal
+from .models import Animal, Item
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
+
 
 def main_page(request):
     #animal1 = Animal.objects.create(name='Kit', type='Cat')
@@ -16,14 +16,14 @@ def main_page(request):
     return render(request, "index.html", {"all": all_animals})
 
 
-def bump(request, pk):
-
-    a = Animal.objects.get(pk=pk)
-    print(f"Updated {a.name}")
-    a.donations_amount += 20
-    a.total_donations += 1
-    a.save()
-    return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
+# def bump(request, pk):
+#
+#     a = Animal.objects.get(pk=pk)
+#     print(f"Updated {a.name}")
+#     a.donations_amount += 20
+#     a.total_donations += 1
+#     a.save()
+#     return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
 
 
 def save_uploaded_image(uploaded_file, name):
@@ -86,7 +86,9 @@ def about_us(request):
 
 
 def auctions(request):
-    return render(request, "Licytacje.html")
+    all_items = Item.objects.all
+    all_animals = Animal.objects.all
+    return render(request, "Licytacje.html", {"items": all_items, "animals": all_animals})
 
 
 def login(request):

@@ -83,10 +83,12 @@ borders: top right bottom left !important
               <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
                 <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
               </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-3">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
+              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-3">{{ items.0.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
               <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-2" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-4">Kupując ten produkt wspierasz zbiórkę:</h4>
+              <div class="u-image u-image-circle u-image-2" alt="" data-image-width="1280" data-image-height="857">
+                  <img src={{ static "images/9035065_paw_icon.png" >
+              </div>
+              <h4 class="u-custom-font u-text u-text-font u-text-4">Kupując ten produkt wspierasz zbiórkę: {{ items.0.animal_id }}</h4>
             </div>
           </div>
         </div>
