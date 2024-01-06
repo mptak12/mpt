@@ -205,14 +205,14 @@ var offerName = ""
                   <input type="file" id="imageUpload" name="imageUpload">
               </div>
               <div class="form-group">
-                  <label for="targetAmount">Docelowa Kwota</label>
+                  <label >Docelowa Kwota</label>
                   <input type="text" id="targetAmount" name="targetAmount">
               </div>
               <div class="form-group">
                   <label for="endDate">Data zakończenia</label>
                   <input type="date" id="endDate" name="endDate">
               </div>
-              <button type="submit">Zatwierdź</button>
+              <button id="submitOffers" type="button" >Zatwierdź</button>
           </form>
       </div>
   </div>
@@ -377,6 +377,58 @@ var offerName = ""
                 }
               </script>
 
+              <script>
+              var acceptButton = document.getElementById('submitOffers');
+
+              acceptButton.onclick = function () {
+                  var form = document.getElementById('collectionForm');
+                  var formData = new FormData(form);
+
+                  var tgt = formData.get('targetAmount');  // Retrieve specific field value from FormData
+
+                  if (parseFloat(tgt) > 0) {
+                      $.ajax({
+                          type: 'POST',
+                          url: '',  // Update with your actual URL
+                          data: formData,
+                          processData: false,
+                          contentType: false,
+                          success: function () {
+                              alert('Dodano wpis!');
+                              reloadPage();
+                          },
+                          error: function (error) {
+                              var errorMessage = error.responseText;
+                              alert(errorMessage);
+                          }
+                      });
+                  } else {
+                      alert('Wpisz poprawne wartości!!');
+                      reloadPage();
+                  }
+              };
+              </script>
+              <script>
+                function getValueAndId() {
+                    var textareaValue = document.getElementById('email-a0fb').value;
+
+                    if (parseInt(textareaValue) > 0) {
+                      $.ajax({
+                        type: 'POST',
+                        url:'',
+                        data: { 'type': 'donation', 'donation_value': textareaValue, 'offer_pk': offerId },
+                        success: function(){
+                            alert('Dziękujemy za wsparcie zbiórki!!');
+                            reloadPage();
+                        }
+                      });
+                    }
+                    else {
+                      alert('Wpisz poprawną kwotę!!');
+                      reloadPage();
+                    }
+                }
+              </script>
               <script>
                 function getValueAndId() {
                     var textareaValue = document.getElementById('email-a0fb').value;
