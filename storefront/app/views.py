@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Animal
 from .models import Item
+from .models import Item
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -55,11 +56,14 @@ def login(request):
 def auctions(request):
     # Pobierz wszystkie przedmioty do sprzedaży
     all_items = Item.objects.all()
+    # Pobierz wszystkie przedmioty do sprzedaży
+    all_items = Item.objects.all()
 
     # Określ liczbę przedmiotów na stronie
-    items_per_page = 4
+    items_per_page = 2
 
     # Utwórz obiekt paginacji
+    paginator = Paginator(all_items, items_per_page)
     paginator = Paginator(all_items, items_per_page)
 
     # Pobierz numer strony z parametru GET (jeśli nie ma, przyjmij 1)
@@ -68,11 +72,15 @@ def auctions(request):
     try:
         # Pobierz obiekt Page dla danej strony
         items_page = paginator.page(page)
+        items_page = paginator.page(page)
     except PageNotAnInteger:
         # Jeśli numer strony nie jest liczbą całkowitą, pobierz pierwszą stronę
+        items_page = paginator.page(1)
         items_page = paginator.page(1)
     except EmptyPage:
         # Jeśli numer strony jest poza zakresem, pobierz ostatnią stronę
         items_page = paginator.page(paginator.num_pages)
+        items_page = paginator.page(paginator.num_pages)
 
+    return render(request, "Licytacje.html", {"items_page": items_page})
     return render(request, "Licytacje.html", {"items_page": items_page})
