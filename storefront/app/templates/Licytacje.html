@@ -107,19 +107,29 @@ var offerId = 0
       </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
       <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
         <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static 'images/1949a5ea0ddbc3494661a77794e49131a64eacd2d115d6adfa5af55fb489286abbc0ec32d0a58621cb4b57e2687bc88a885ddbd924695a2ef3c937_1280.jpg' %}"><!--/product_image-->
+          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static items.1.picture %}"><!--/product_image-->
           <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
             <div class="u-container-layout u-container-layout-4"><!--product_title-->
               <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.1.name }}<!--/product_title_content--></a>
               </h2><!--/product_title--><!--product_content-->
               <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
-                <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                <p>{{ items.1.description }}</p><!--/product_content_content-->
               </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
-              <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
+              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">{{ items.1.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
+              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id="" onclick="showPopup('{{items.1.name}}', '{{items.1.price}}', '{{items.1.pk}}')"><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
+              <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857">
+                {% with item_animal_id=items.1.animal_id %}
+                    {% with animal=animals|get_item:item_animal_id %}
+                        {% if animal %}
+                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
+                        {% else %}
+                            <p>No corresponding animal found for item</p>
+                        {% endif %}
+                    {% endwith %}
+                {% endwith %}
+              </div>
+              <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę: {{ items.1.animal_id }}</h4>
             </div>
           </div>
         </div>
