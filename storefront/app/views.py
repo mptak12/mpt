@@ -1,8 +1,12 @@
 import decimal
+import os
+from unidecode import unidecode
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+
 from .models import Animal, Item
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 
 def main_page(request):
