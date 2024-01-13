@@ -1,29 +1,20 @@
 import decimal
 import os
 from unidecode import unidecode
-
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Animal
+
+from .models import Animal, Item
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
+
 def main_page(request):
-    #animal1 = Animal.objects.create(name='Kit', type='Cat')
-    #animal1.save()
+    # animal1 = Animal.objects.create(name='Kit', type='Cat')
+    # animal1.save()
 
     all_animals = Animal.objects.all
     return render(request, "index.html", {"all": all_animals})
-
-
-def bump(request, pk):
-
-    a = Animal.objects.get(pk=pk)
-    print(f"Updated {a.name}")
-    a.donations_amount += 20
-    a.total_donations += 1
-    a.save()
-    return HttpResponseRedirect(request. META. get('HTTP_REFERER', '/'))
 
 
 def save_uploaded_image(uploaded_file, name):
@@ -81,12 +72,42 @@ def dotation_page(request):
     return render(request, "Wplac.html", {"all": all_animals})
 
 
+@csrf_exempt
+def auctions(request):
+    all_items = Item.objects.all
+    all_animals = Animal.objects.all
+
+    if request.method == "POST":
+        if 'imageUpload' in request.FILES:
+            uploaded_image = request.FILES['imageUpload']
+            item_name = request.POST.get('collectionName')
+            saved_path = save_uploaded_image(uploaded_image, f'{unidecode(item_name).replace(" ", "_")}.png')
+            saved_path = saved_path.split('static\\', 1)[1]
+
+            connected_animal = get_object_or_404(Animal, pk=int(request.POST.get('dropdownList')))
+
+            newItem = Item.objects.create(name=item_name,
+                                          animal_id=connected_animal,
+                                          description=request.POST.get('description'),
+                                          picture=saved_path,
+                                          price=request.POST.get('targetAmount'),
+                                          )
+            newItem.save()
+
+        else:
+            item_pk = request.POST.get('offer_pk')
+            val = request.POST.get('value')
+            print("Wpłacono" + val + "na item o kluczu" + item_pk)
+
+            item = Item.objects.get(pk=item_pk)
+            item.price = int(val)
+            item.save()
+
+    return render(request, "Licytacje.html", {"items": all_items, "animals": all_animals})
+
+
 def about_us(request):
     return render(request, "O-nas.html")
-
-
-def auctions(request):
-    return render(request, "Licytacje.html")
 
 
 def login(request):
