@@ -215,20 +215,20 @@ var offerId = 0
                   <input type="file" id="imageUpload" name="imageUpload">
               </div>
               <div class="form-group">
-                  <label for="targetAmount">Cena</label>
+                  <label for="targetAmount">Cena startowa</label>
                   <input type="text" id="targetAmount" name="targetAmount">
               </div>
               <!-- Dropdown list added here -->
               <div class="form-group">
                   <label for="dropdownList">Wybierz cel dotacji</label>
                   <select id="dropdownList" name="dropdownList">
-                      <option value="category1">Kategoria 1</option>
-                      <option value="category2">Kategoria 2</option>
-                      <option value="category3">Kategoria 3</option>
-                      <!-- Add more options as needed -->
+                      {% for animal in animals %}
+                        <option value="{{ animal.pk }}">{{ animal.type }} {{ animal.name }}</option>
+                        <li>{{ animal.name }} - {{ animal.type }}</li>
+                      {% endfor %}
                   </select>
               </div>
-              <button type="submit">Zatwierdź</button>
+              <button id="submitOffers" type="button" >Zatwierdź</button>
           </form>
       </div>
   </div>
@@ -431,8 +431,50 @@ var offerId = 0
               reloadPage();
             }
           }
-
           </script>
+
+          <script>
+              var acceptButton = document.getElementById('submitOffers');
+
+              acceptButton.onclick = function () {
+                  //handleDropdown()
+
+                  var form = document.getElementById('collectionForm');
+                  var formData = new FormData(form);
+
+                  var tgt = formData.get('targetAmount');  // Retrieve specific field value from FormData
+
+                  if (parseFloat(tgt) > 0) {
+                      $.ajax({
+                          type: 'POST',
+                          url: '',  // Update with your actual URL
+                          data: formData,
+                          processData: false,
+                          contentType: false,
+                          success: function () {
+                              alert('Dodano licytację!');
+                              reloadPage();
+                          },
+                          error: function (error) {
+                              var errorMessage = error.responseText;
+                              alert(errorMessage);
+                          }
+                      });
+                  } else {
+                      alert('Wpisz poprawne wartości!!');
+                      reloadPage();
+                  }
+              };
+          </script>
+
+          <script>
+          function handleDropdown() {
+            var dropdown = document.getElementById('dropdownList');
+            selectedValue = dropdown.options[dropdown.selectedIndex].value;
+            alert(selectedValue)
+          }
+          </script>
+
 
         </section>
         
