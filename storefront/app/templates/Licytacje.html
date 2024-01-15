@@ -1,5 +1,4 @@
 {% load static %}
-{% load custom_filters %}
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pl"><head>
@@ -33,9 +32,6 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pl"><header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-sticky u-sticky-2102 u-white u-header" id="sec-5eec" data-href="{% url 'userLogin' %}"><style class="u-sticky-style" data-style-id="2102">.u-sticky-fixed.u-sticky-2102:before, .u-body.u-sticky-fixed .u-sticky-2102:before {
 borders: top right bottom left !important
-
-var offerId = 0
-
 }</style><div class="u-clearfix u-sheet u-sheet-1">
         <a href="{% url 'main' %}" class="u-hover-feature u-image u-logo u-image-1" data-image-width="512" data-image-height="512" title="Główna">
           <img src="{% static 'images/9035065_paw_icon.png' %}" class="u-logo-image u-logo-image-1">
@@ -75,165 +71,32 @@ var offerId = 0
           </div>
         </div>
       </div></header>
-    <section class="u-clearfix u-grey-80 u-section-1" id="sec-fe7f"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-1">
-        <div class="u-container-layout u-valign-bottom u-container-layout-1"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-1" data-image-width="1280" data-image-height="853" src="{% static items.0.picture %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-1">
-            <div class="u-container-layout u-container-layout-2"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.0.name }}<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
-                <p>{{ items.0.description }}</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-3">{{ items.0.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-1 u-dialog-link" data-product-button-click-type="buy-now" data-product-id="" onclick="showPopup('{{items.0.name}}', '{{items.0.price}}', '{{items.0.pk}}')" ><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-2" data-image-width="100" data-image-height="50" >
-                {% with item_animal_id=items.0.animal_id %}
-                    {% with animal=animals|get_item:item_animal_id %}
-                        {% if animal %}
-                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
-                        {% else %}
-                            <p>No corresponding animal found for item</p>
-                        {% endif %}
-                    {% endwith %}
-                {% endwith %}
+      {% for auction in auctions_page %}
+      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
+        <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
+          <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
+            <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static auction.picture %}"><!--/product_image-->
+            <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
+              <div class="u-container-layout u-container-layout-4"><!--product_title-->
+                <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                </h2><!--/product_title--><!--product_content-->
+                <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
+                  <p>{{auction.description}}</p><!--/product_content_content-->
+                </div><!--/product_content-->
+                <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">CENA[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
+                <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id=""><!--product_button_content-->Kup<!--/product_button_content--></a><!--/product_button-->
+                <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857"></div>
+                <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę:</h4>
               </div>
-              <h4 class="u-custom-font u-text u-text-font u-text-4">Kupując ten produkt wspierasz zbiórkę: {{ items.0.animal_id }}</h4>
             </div>
           </div>
-        </div>
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-grey-80 u-product u-product-2">
-        <div class="u-container-layout u-valign-bottom u-container-layout-3"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-3" data-image-width="1280" data-image-height="853" src="{% static items.1.picture %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-2">
-            <div class="u-container-layout u-container-layout-4"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-5">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.1.name }}<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-6"><!--product_content_content-->
-                <p>{{ items.1.description }}</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-7">{{ items.1.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-2 u-dialog-link" data-product-button-click-type="buy-now" data-product-id="" onclick="showPopup('{{items.1.name}}', '{{items.1.price}}', '{{items.1.pk}}')"><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
-              <div class="u-image u-image-circle u-image-4" alt="" data-image-width="1280" data-image-height="857">
-                {% with item_animal_id=items.1.animal_id %}
-                    {% with animal=animals|get_item:item_animal_id %}
-                        {% if animal %}
-                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
-                        {% else %}
-                            <p>No corresponding animal found for item</p>
-                        {% endif %}
-                    {% endwith %}
-                {% endwith %}
-              </div>
-              <h4 class="u-custom-font u-text u-text-font u-text-8">Kupując ten produkt wspierasz zbiórkę: {{ items.1.animal_id }}</h4>
-            </div>
-          </div>
-        </div>
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-3">
-        <div class="u-container-layout u-container-layout-5"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-5" data-image-width="1280" data-image-height="853" src="{% static items.2.picture %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-3">
-            <div class="u-container-layout u-container-layout-6"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-9">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.2.name }}<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-10"><!--product_content_content-->
-                <p>{{ items.2.description }}</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-11">{{ items.2.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-3 u-dialog-link" data-product-button-click-type="buy-now" data-product-id="" onclick="showPopup('{{items.2.name}}', '{{items.2.price}}', '{{items.2.pk}}')"><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
-                {% with item_animal_id=items.2.animal_id %}
-                    {% with animal=animals|get_item:item_animal_id %}
-                        {% if animal %}
-                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
-                        {% else %}
-                            <p>No corresponding animal found for item</p>
-                        {% endif %}
-                    {% endwith %}
-                {% endwith %}
-              <h4 class="u-custom-font u-text u-text-font u-text-12">Kupując ten produkt wspierasz zbiórkę: {{ items.2.animal_id }}</h4>
-            </div>
-          </div>
-        </div>
-      </div><!--/product_item--><!--/product--><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
-      <div class="custom-expanded u-container-style u-product u-product-4">
-        <div class="u-container-layout u-valign-bottom u-container-layout-7"><!--product_image-->
-          <img alt="" class="custom-expanded u-image u-image-round u-product-control u-radius u-image-7" data-image-width="1280" data-image-height="853" src="{% static items.3.picture %}"><!--/product_image-->
-          <div class="custom-expanded u-align-left u-container-style u-group u-shape-rectangle u-group-4">
-            <div class="u-container-layout u-container-layout-8"><!--product_title-->
-              <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-13">
-                <a class="u-product-title-link" href="#"><!--product_title_content-->{{ items.3.name }}<!--/product_title_content--></a>
-              </h2><!--/product_title--><!--product_content-->
-              <div class="u-product-control u-product-desc u-text u-text-14"><!--product_content_content-->
-                <p>{{ items.3.description }}</p><!--/product_content_content-->
-              </div><!--/product_content-->
-              <p class="product_cost u-custom-font u-font-roboto-slab u-text u-text-default u-text-15">{{ items.3.price }}[PLN]</p><!--product_button--><!--options_json--><!--{"clickType":"buy-now","content":"Kup"}--><!--/options_json-->
-              <a href="#sec-9a2f" class="u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-palette-1-base u-payment-button u-product-control u-radius u-btn-4 u-dialog-link" data-product-button-click-type="buy-now" data-product-id="" onclick="showPopup('{{items.3.name}}', '{{items.3.price}}', '{{items.3.pk}}')"><!--product_button_content-->Licytuj<!--/product_button_content--></a><!--/product_button-->
-                {% with item_animal_id=items.3.animal_id %}
-                    {% with animal=animals|get_item:item_animal_id %}
-                        {% if animal %}
-                            <img src="/static/{{ animal.picture }}" alt="{{ animal.name }} Picture" class="u-image u-image-circle u-image-2">
-                        {% else %}
-                            <p>No corresponding animal found for item</p>
-                        {% endif %}
-                    {% endwith %}
-                {% endwith %}
-              <h4 class="u-custom-font u-text u-text-font u-text-16">Kupując ten produkt wspierasz zbiórkę: {{ items.3.animal_id }}</h4>
-            </div>
-          </div>
-        </div>
       </div><!--/product_item--><!--/product-->
       <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
     </section>
-    
-    <div class="plus-button-container">
-      <a id="show-popup" class="plus-button-style"><i class="fa-solid fa-circle-plus"></i></a>
-      <span class="button-span">Dodaj zbiorke</span>
-      <audio id="button-sound" src="{% static 'images/bark.mp3' %}"></audio>
-    </div>
+    {% endfor %}
 
-    <div class="popup-overlay" id="popup-overlay">
-      <div class="popup-window">
-          <span class="popup-close-button" id="popup-close-button">&times;</span>
-          <h2>Formularz Oferty Licytacji</h2>
-          <form id="collectionForm">
-              <div class="form-group">
-                  <label for="collectionName">Tytuł oferty</label>
-                  <input type="text" id="collectionName" name="collectionName">
-              </div>
-              <div class="form-group">
-                  <label for="description">Opis</label>
-                  <textarea id="description" name="description"></textarea>
-              </div>
-              <div class="form-group">
-                  <label for="imageUpload">Dodaj zdjęcie</label>
-                  <input type="file" id="imageUpload" name="imageUpload">
-              </div>
-              <div class="form-group">
-                  <label for="targetAmount">Cena startowa</label>
-                  <input type="text" id="targetAmount" name="targetAmount">
-              </div>
-              <!-- Dropdown list added here -->
-              <div class="form-group">
-                  <label for="dropdownList">Wybierz cel dotacji</label>
-                  <select id="dropdownList" name="dropdownList">
-                      {% for animal in animals %}
-                        <option value="{{ animal.pk }}">{{ animal.type }} {{ animal.name }}</option>
-                        <li>{{ animal.name }} - {{ animal.type }}</li>
-                      {% endfor %}
-                  </select>
-              </div>
-              <button id="submitOffers" type="button" >Zatwierdź</button>
-          </form>
-      </div>
-  </div>
-  
-    
+
     <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-grey-80" id="sec-d2a6"><div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1"><span class="u-file-icon u-icon u-icon-1"><img src="{% static 'images/3940403.png' %}" alt=""></span>
         <div class="custom-expanded u-align-center u-layout-grid u-list u-list-1">
           <div class="u-repeater u-repeater-1">
@@ -247,6 +110,68 @@ var offerId = 0
             </div>
           </div>
         </div>
+  
+
+
+
+        <style>
+          .pagination {
+              display: flex;
+              justify-content: center;
+          }
+      
+          .pagination .page-item {
+              margin-right: 50px; /* Dodatkowy margines między numerami stron */
+          }
+      </style>
+      
+
+<!-- Pętla po aukcjach na aktualnej stronie -->
+
+
+<!-- Dodaj resztę informacji o aukcji -->
+
+
+<!-- Wyświetlanie numerów stron -->
+<nav aria-label="Page navigation example">
+<ul class="pagination">
+    <!-- Strzałki nawigacyjne do poprzednich stron -->
+    {% if auctions_page.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="First">
+                <span aria-hidden="true">««</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+    {% endif %}
+
+    <!-- Numeracja stron -->
+    {% for num in auctions_page.paginator.page_range %}
+        <li class="page-item {% if num == auctions_page.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+    {% endfor %}
+
+    <!-- Strzałki nawigacyjne do następnych stron -->
+    {% if auctions_page.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">»</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ auctions_page.paginator.num_pages }}" aria-label="Last">
+                <span aria-hidden="true">»»</span>
+            </a>
+        </li>
+    {% endif %}
+</ul>
+</nav>
+
         <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
@@ -312,8 +237,8 @@ var offerId = 0
       <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-payment-dialog u-dialog-section-7" id="sec-9a2f">
         <div class="u-align-center u-container-style u-dialog u-radius-25 u-shape-round u-white u-dialog-1">
             <div class="u-container-layout u-container-layout-1">
-              <h5 class="u-custom-font u-font-lobster u-text u-text-1" >Licytuj</h5>
-                <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2" id="item-name"> Przedmiot</h6>
+              <h5 class="u-custom-font u-font-lobster u-text u-text-1">Wpłać</h5>
+              <h6 class="u-custom-font u-font-roboto-slab u-text u-text-default u-text-2">Tytuł wpłacanej oferty</h6>
               <img class="u-image u-image-circle u-image-1" src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675.jpg" alt="" data-image-width="1600" data-image-height="900">
               <div class="u-border-6 u-border-palette-1-base u-line u-line-horizontal u-line-1"></div>
               <img class="u-image u-image-contain u-image-default u-image-2" src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/148092/8351c9f2168db87ec7e4de23a520a289.jpg" alt="" data-image-width="1299" data-image-height="827">
@@ -330,14 +255,16 @@ var offerId = 0
               <div class="custom-expanded u-form u-form-1">
                 <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 10px;">
                   <div class="u-form-group u-form-message u-label-none">
-                    <label for="value-box" class="u-label">[PLN]</label>
-                    <textarea placeholder="Podaj kwotę wpłaty" id="value-box" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
+                    <label for="email-a0fb" class="u-label">[PLN]</label>
+                    <textarea placeholder="Podaj kwotę wpłaty" id="email-a0fb" name="wplata" class="u-input u-input-rectangle" required="required"></textarea>
                   </div>
                   <div class="u-align-left u-form-group u-form-submit u-label-none">
-                    <a href="#" onclick="submitAuction()" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">Licytuj</a>
+                    <a href="#" onclick="getValueAndId()" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-oswald u-radius u-text-white u-btn-1">WPŁAĆ</a>
+
                     <input type="submit" value="submit" class="u-form-control-hidden">
                   </div>
                   <div class="u-form-send-message u-form-send-success"> Dziękujemy! Twoja wiadomość została wysłana! </div>
+                  <div class="u-form-send-error u-form-send-message"> Przepraszamy, wiadomość nie mogła zostać wysłana. Popraw błędy i spróbuj ponownie. </div>
                   <input type="hidden" value="" name="recaptchaResponse">
                   <input type="hidden" name="formServices" value="">
                 </form>
@@ -390,91 +317,6 @@ var offerId = 0
               }
             }
           </script>
-
-
-          <script>
-          function showPopup(name, amount, ofID){
-            var text_field = document.getElementById('item-name');
-            text_field.innerText = name;
-
-            var val_field = document.getElementById('value-box');
-            val_field.placeholder = amount;
-
-            setOfferId(ofID)
-          }
-
-          function setOfferId(ofID) {
-            offerId = ofID;
-          }
-
-          function reloadPage() {
-            location.reload();
-          }
-
-          function submitAuction(){
-            var prevValue = document.getElementById('value-box').placeholder;
-            var actValue = document.getElementById('value-box').value;
-
-            if (parseInt(actValue) > parseInt(prevValue)) {
-              $.ajax({
-                type: 'POST',
-                url:'',
-                data: { 'value': actValue, 'offer_pk': offerId },
-                success: function(){
-                    alert('Dziękujemy za licytację!!');
-                    reloadPage();
-                }
-              });
-            }
-            else {
-              alert('Wpisz kwotę wyższą niż aktualna!!');
-              reloadPage();
-            }
-          }
-          </script>
-
-          <script>
-              var acceptButton = document.getElementById('submitOffers');
-
-              acceptButton.onclick = function () {
-                  //handleDropdown()
-
-                  var form = document.getElementById('collectionForm');
-                  var formData = new FormData(form);
-
-                  var tgt = formData.get('targetAmount');  // Retrieve specific field value from FormData
-
-                  if (parseFloat(tgt) > 0) {
-                      $.ajax({
-                          type: 'POST',
-                          url: '',  // Update with your actual URL
-                          data: formData,
-                          processData: false,
-                          contentType: false,
-                          success: function () {
-                              alert('Dodano licytację!');
-                              reloadPage();
-                          },
-                          error: function (error) {
-                              var errorMessage = error.responseText;
-                              alert(errorMessage);
-                          }
-                      });
-                  } else {
-                      alert('Wpisz poprawne wartości!!');
-                      reloadPage();
-                  }
-              };
-          </script>
-
-          <script>
-          function handleDropdown() {
-            var dropdown = document.getElementById('dropdownList');
-            selectedValue = dropdown.options[dropdown.selectedIndex].value;
-            alert(selectedValue)
-          }
-          </script>
-
 
         </section>
         
@@ -839,5 +681,11 @@ var offerId = 0
   .u-dialog-section-7 .u-icon-2 {
     right: 20px;
   }
+  
 }</style>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body></html>
