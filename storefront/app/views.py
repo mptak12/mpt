@@ -6,7 +6,9 @@ from .models import Animal
 from .models import Item
 from .models import Item
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settingsfrom django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 def main_page(request):
